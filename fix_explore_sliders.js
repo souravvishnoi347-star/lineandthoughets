@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const dir = 'd:/Hostbolt/clients/Lines & thoughts (Haridwar)/testing 2';
-const srcDir = path.join(dir, 'website assests');
+const srcDir = path.join(dir, 'optimized-assets');
 
 const files = fs.readdirSync(dir).filter(f => f.startsWith('project-') && f.endsWith('.html'));
 
@@ -33,7 +33,7 @@ projects.forEach(p => {
                 return ext.endsWith('.jpg') || ext.endsWith('.jpeg') || ext.endsWith('.png');
             });
             if (imgs.length > 0) {
-                p.image = `website assests/${p.folder}/${imgs[0]}`;
+                p.image = `${p.folder}/${imgs[0]}`;
             } else {
                 p.image = 'assets/office.jpg'; // fallback
             }

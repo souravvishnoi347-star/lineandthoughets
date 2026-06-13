@@ -5,17 +5,17 @@ const dir = 'd:/Hostbolt/clients/Lines & thoughts (Haridwar)/testing 2';
 const files = fs.readdirSync(dir).filter(f => f.startsWith('project-') && f.endsWith('.html'));
 
 const projects = [
-    { name: 'Avyanna', file: 'project-avyanna.html', category: 'Hospitality', image: 'website assests/Avyanna, Hospitality/01.png' },
-    { name: 'Gauree', file: 'project-gauree.html', category: 'Commercial', image: 'website assests/Gauree, Commercial/01.png' },
-    { name: 'Jewels Lounge', file: 'project-jewels-lounge.html', category: 'Commercial', image: 'website assests/Jewels Lounge, Commercial/01.png' },
-    { name: 'Moshams', file: 'project-moshams.html', category: 'Hospitality', image: 'website assests/MoShams, Hospitality/01.jpg' },
-    { name: 'The Burnt Wall', file: 'project-the-burnt-wall.html', category: 'Commercial', image: 'website assests/The Burnt Wall, Commercial/01.png' },
-    { name: 'The Calm House', file: 'project-the-calm-house.html', category: 'Residential', image: 'website assests/The Calm House, Residential/01.jpg' },
+    { name: 'Avyanna', file: 'project-avyanna.html', category: 'Hospitality', image: 'Avyanna, Hospitality/01.png' },
+    { name: 'Gauree', file: 'project-gauree.html', category: 'Commercial', image: 'Gauree, Commercial/01.png' },
+    { name: 'Jewels Lounge', file: 'project-jewels-lounge.html', category: 'Commercial', image: 'Jewels Lounge, Commercial/01.png' },
+    { name: 'Moshams', file: 'project-moshams.html', category: 'Hospitality', image: 'MoShams, Hospitality/01.jpg' },
+    { name: 'The Burnt Wall', file: 'project-the-burnt-wall.html', category: 'Commercial', image: 'The Burnt Wall, Commercial/01.png' },
+    { name: 'The Calm House', file: 'project-the-calm-house.html', category: 'Residential', image: 'The Calm House, Residential/01.jpg' },
     { name: 'The Designers\' Den', file: 'project-designers-den.html', category: 'Commercial', image: 'projects/07.jpg' },
-    { name: 'The Flowing Canopy', file: 'project-the-flowing-canopy.html', category: 'Hospitality', image: 'website assests/The Flowing Canopy, Hospitality/01.jpg' },
-    { name: 'The Laxmi Narayan', file: 'project-the-laxmi-narayan.html', category: 'Residential', image: 'website assests/The Laxmi Narayan, Residential/01.png' },
-    { name: 'The Linear Office', file: 'project-the-linear-office.html', category: 'Commercial', image: 'website assests/The Linear Office, Commercial/01.jpg' },
-    { name: 'The Mud Villas', file: 'project-the-mud-villas.html', category: 'Hospitality', image: 'website assests/The Mud Villas, Hospitality/01.png' }
+    { name: 'The Flowing Canopy', file: 'project-the-flowing-canopy.html', category: 'Hospitality', image: 'The Flowing Canopy, Hospitality/01.jpg' },
+    { name: 'The Laxmi Narayan', file: 'project-the-laxmi-narayan.html', category: 'Residential', image: 'The Laxmi Narayan, Residential/01.png' },
+    { name: 'The Linear Office', file: 'project-the-linear-office.html', category: 'Commercial', image: 'The Linear Office, Commercial/01.jpg' },
+    { name: 'The Mud Villas', file: 'project-the-mud-villas.html', category: 'Hospitality', image: 'The Mud Villas, Hospitality/01.png' }
 ];
 
 files.forEach(file => {

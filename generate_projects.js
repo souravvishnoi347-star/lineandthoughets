@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const srcDir = 'website assests';
+const srcDir = 'optimized-assets';
 const templatePath = 'project-designers-den.html';
 const templateHTML = fs.readFileSync(templatePath, 'utf8');
 
@@ -25,8 +25,8 @@ folders.forEach(folder => {
     const projectDir = path.join(srcDir, folder);
     const images = fs.readdirSync(projectDir).filter(f => f.endsWith('.jpg') || f.endsWith('.png'));
     
-    const image1 = images.length > 0 ? `website assests/${folder}/${images[0]}` : 'projects/07.jpg';
-    const image2 = images.length > 1 ? `website assests/${folder}/${images[1]}` : 'projects/den-proj1.jpg';
+    const image1 = images.length > 0 ? `${folder}/${images[0]}` : 'projects/07.jpg';
+    const image2 = images.length > 1 ? `${folder}/${images[1]}` : 'projects/den-proj1.jpg';
     
     // Create new HTML by replacing
     let newHTML = templateHTML;

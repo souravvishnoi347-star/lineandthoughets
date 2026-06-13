@@ -4,7 +4,7 @@ const path = require('path');
 const dir = 'd:/Hostbolt/clients/Lines & thoughts (Haridwar)/testing 2';
 const files = fs.readdirSync(dir).filter(f => f.startsWith('project-') && f.endsWith('.html'));
 
-const srcDir = path.join(dir, 'website assests');
+const srcDir = path.join(dir, 'optimized-assets');
 
 const projectsMap = {
     'project-avyanna.html': 'Avyanna, Hospitality',
@@ -42,7 +42,7 @@ files.forEach(file => {
     if (images.length === 0) return;
     
     // 1. Fix Hero Image
-    const heroImage = `website assests/${folderName}/${images[0]}`;
+    const heroImage = `${folderName}/${images[0]}`;
     const imgRegex = /<img\s+src="[^"]+"\s+id="dynamic-hero-img"\s+alt="[^"]*">/g;
     
     if (imgRegex.test(content)) {
@@ -53,7 +53,7 @@ files.forEach(file => {
     const galleryRegex = /<div class="project-gallery-carousel">[\s\S]*?<\/div>/;
     let galleryHtml = '<div class="project-gallery-carousel">\n';
     images.forEach(img => {
-        galleryHtml += `                    <img src="website assests/${folderName}/${img}" alt="Project Image">\n`;
+        galleryHtml += `                    <img src="${folderName}/${img}" alt="Project Image">\n`;
     });
     galleryHtml += '                </div>';
     

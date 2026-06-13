@@ -48,7 +48,7 @@ if (!cssContent.includes('.project-gallery-carousel')) {
 
 // 2. Update HTML files
 const files = fs.readdirSync(dir).filter(f => f.startsWith('project-') && f.endsWith('.html'));
-const srcDir = path.join(dir, 'website assests');
+const srcDir = path.join(dir, 'optimized-assets');
 
 const projectsMap = {
     'project-avyanna.html': 'Avyanna, Hospitality',
@@ -68,7 +68,7 @@ files.forEach(file => {
     let content = fs.readFileSync(filePath, 'utf8');
     
     // Find the single content image
-    // E.g., <img src="website assests/Avyanna, Hospitality/02.png" style="width: 100%; margin-top: 40px; margin-bottom: 20px;" alt="Avyanna Interior">
+    // E.g., <img src="Avyanna, Hospitality/02.png" style="width: 100%; margin-top: 40px; margin-bottom: 20px;" alt="Avyanna Interior">
     const imgRegex = /<img src="[^"]+" style="width: 100%; margin-top: 40px; margin-bottom: 20px;"[^>]*>/;
     
     let folderName;
@@ -94,7 +94,7 @@ files.forEach(file => {
     // Build the gallery HTML
     let galleryHtml = '<div class="project-gallery-carousel">\n';
     images.forEach(img => {
-        galleryHtml += `                    <img src="website assests/${folderName}/${img}" alt="Project Image">\n`;
+        galleryHtml += `                    <img src="${folderName}/${img}" alt="Project Image">\n`;
     });
     galleryHtml += '                </div>';
     
