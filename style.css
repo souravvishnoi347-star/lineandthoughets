@@ -515,7 +515,7 @@ textarea.form-control { resize: vertical; min-height: 100px; }
     .brand { transform: none !important; transform-origin: top left !important; }
 
     /* --- Hamburger Menu (Homepage + Inner Pages) --- */
-    #main-nav { position: relative !important; top: auto !important; right: auto !important; left: auto !important; width: auto !important; z-index: 1005 !important; pointer-events: none; }
+    #main-nav { position: relative !important; top: auto !important; right: auto !important; left: auto !important; width: auto !important; z-index: 1005 !important; pointer-events: auto; }
 
     .hamburger, .menu-toggle {
         display: flex !important;
