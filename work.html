@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,800;1,300&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work | Lines & Thoughts</title>
+<link rel="icon" type="image/png" href="assets/favicon.png?v=2">
+    <link rel="stylesheet" href="style.css?v=3">
+    <style>
+        .work-typing-cursor {
+            border-right: 2px solid currentColor;
+            animation: blink 0.75s step-end infinite;
+        }
+        #type-signature-title { 
+            font-weight: bold !important; 
+            color: #000 !important; 
+            letter-spacing: 6px !important; 
+            text-transform: uppercase !important; 
+            font-family: 'Arial Arabic', Arial, sans-serif !important; 
+            font-style: normal !important; 
+        }
+        #type-works-title { 
+            font-style: normal !important; 
+            font-weight: normal !important; 
+            color: #888 !important; 
+            letter-spacing: 2px !important; 
+            text-transform: lowercase !important; 
+            font-family: 'M Hei PRC', sans-serif !important; 
+        }
+        @media screen and (max-width: 768px) {
+            .type-work-title span { font-size: 30px !important; }
+            .work-hero { align-items: center !important; }
+        }
+    </style>
+</head>
+<body style="background-color: #ffffff;">
+<nav class="static-nav">
+        <a href="index.html" class="nav-logo-wrapper">
+            <img src="assets/icon.png" class="nav-logo-img" alt="Logo">
+            <div class="nav-logo-text-group">
+                <div class="nav-logo-main"><span>LINES</span> & THOUGHTS</div>
+                <div class="nav-logo-sub">BY KARTIK | AKSHAY</div>
+            </div>
+        </a>
+
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+       <div class="nav-links">
+            <a href="work.html" class="active">Work</a>
+            <a href="about.html">Studio</a>
+            <a href="awards.html">Achievements</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+    <section class="container work-hero">
+        <h2 class="works-main-title" style="margin: 0;">
+            <span id="type-signature-title"></span>
+            <span id="type-works-title"></span>
+        </h2>
+        <div class="filter-tabs">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="hospitality">Hospitality</button>
+            <button class="filter-btn" data-filter="commercial">Commercial</button>
+            <button class="filter-btn" data-filter="residential">Residential</button>
+        </div>
+    </section>
+
+  <section class="container portfolio-section">
+        <div class="grid" id="portfolio-grid">
+            
+            <a href="project-avyanna.html" class="grid-item">
+                <img src="projects/01.jpg" alt="Avyannna">
+                <div class="project-info">
+                    <span class="project-cat">Hospitality</span>
+                    <h3 class="project-name">Avyannna</h3>
+                </div>
+            </a>
+
+            <a href="project-moshams.html" class="grid-item">
+                <img src="projects/04.jpg" alt="MoShams">
+                <div class="project-info">
+                    <span class="project-cat">Hospitality</span>
+                    <h3 class="project-name">Moshams</h3>
+                </div>
+            </a>
+
+            <a href="project-designers-den.html" class="grid-item">
+                <img src="projects/07.jpg" alt="The Designers Den">
+                <div class="project-info">
+                    <span class="project-cat">Commercial</span>
+                    <h3 class="project-name">The Designers' Den</h3>
+                </div>
+            </a>
+
+            <a href="project-the-flowing-canopy.html" class="grid-item">
+                <img src="projects/08.jpg" alt="The Flowing Canopy">
+                <div class="project-info">
+                    <span class="project-cat">Hospitality</span>
+                    <h3 class="project-name">The Flowing Canopy</h3>
+                </div>
+            </a>
+
+            <a href="project-the-linear-office.html" class="grid-item">
+                <img src="projects/10.jpg" alt="The Linear Office">
+                <div class="project-info">
+                    <span class="project-cat">Commercial</span>
+                    <h3 class="project-name">The Linear Office</h3>
+                </div>
+            </a>
+
+            <a href="project-the-mud-villas.html" class="grid-item">
+                <img src="projects/11.jpg" alt="The Mud Villas">
+                <div class="project-info">
+                    <span class="project-cat">hospitality</span>
+                    <h3 class="project-name">The Mud Villas</h3>
+                </div>
+            </a>
+<a href="project-the-laxmi-narayan.html" class="grid-item">
+                <img src="projects/09.jpg" alt="The Laxmi Narayan">
+                <div class="project-info">
+                    <span class="project-cat">Residential</span>
+                    <h3 class="project-name">The Laxmi Narayan</h3>
+                </div>
+            </a>
+
+            <a href="project-gauree.html" class="grid-item">
+                <img src="projects/02.jpg" alt="Gauree">
+                <div class="project-info">
+                    <span class="project-cat">Commercial</span>
+                    <h3 class="project-name">Gauree</h3>
+                </div>
+            </a>
+
+            <a href="project-jewels-lounge.html" class="grid-item">
+                <img src="projects/03.jpg" alt="Jewels Lounge">
+                <div class="project-info">
+                    <span class="project-cat">Commercial</span>
+                    <h3 class="project-name">Jewels Lounge</h3>
+                </div>
+            </a>
+
+            <a href="project-the-burnt-wall.html" class="grid-item">
+                <img src="projects/05.jpg" alt="The Burnt Wall">
+                <div class="project-info">
+                    <span class="project-cat">Commercial</span>
+                    <h3 class="project-name">The Burnt Wall</h3>
+                </div>
+            </a>
+
+            <a href="project-the-calm-house.html" class="grid-item">
+                <img src="projects/06.jpg" alt="The Calm House">
+                <div class="project-info">
+                    <span class="project-cat">Residential</span>
+                    <h3 class="project-name">The Calm House</h3>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+<footer class="footer-new">
+        <div class="container">
+            <div class="copyright-bar">
+                <p>all rights reserved to lines & thoughts | built by . <a href="#">hostbolt</a></p>
+            </div>
+        </div> 
+</footer>
+    <script src="script.js"></script>
+<script>                                                                      
+    // Bulletproof Filter Logic directly on the page
+    document.addEventListener("DOMContentLoaded", () => {
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const gridItems = document.querySelectorAll('.grid-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // 1. Remove underline from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // 2. Add underline to the clicked button
+                btn.classList.add('active');
+
+                // 3. Find out which filter was clicked
+                const filterValue = btn.getAttribute('data-filter').toLowerCase().trim();
+
+                // 4. Show/Hide the images based on the text inside them
+                gridItems.forEach(item => {
+                    const categorySpan = item.querySelector('.project-cat');
+                    if (categorySpan) {
+                        const categoryText = categorySpan.textContent.toLowerCase().trim();
+                        
+                        if (filterValue === 'all' || categoryText.includes(filterValue)) {
+                            item.style.display = 'block'; // Show it
+                        } else {
+                            item.style.display = 'none';  // Hide it
+                        }
+                    }
+                });
+            });
+        });
+
+        // Typewriter Effect for Work Page Title
+        const signatureEl = document.getElementById('type-signature-title');
+        const worksEl = document.getElementById('type-works-title');
+        
+        if(signatureEl && worksEl) {
+            const signatureText = "SIGNATURE";
+            const worksText = "works";
+
+            function typeWriter(element, text, speed, callback) {
+                element.classList.add('work-typing-cursor');
+                let i = 0;
+                function type() {
+                    if (i < text.length) {
+                        element.textContent += text.charAt(i); 
+                        i++;
+                        setTimeout(type, speed);
+                    } else {
+                        element.classList.remove('work-typing-cursor'); 
+                        if (callback) callback();
+                    }
+                }
+                type();
+            }
+
+            // Start effect slightly after page load
+            setTimeout(() => {
+                typeWriter(signatureEl, signatureText, 80, () => {
+                    typeWriter(worksEl, worksText, 80);
+                });
+            }, 400);
+        }
+    });
+</script>
+</body>
+</html>
