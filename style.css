@@ -353,8 +353,8 @@ header { position: absolute; top: 0; left: 0; width: 100%; padding: 30px 40px; z
 .grid-item:hover img { transform: scale(1.08); opacity: 0.8; }
 .grid-item:hover::after { opacity: 1; }
 .grid-item:hover .project-info { opacity: 1; transform: translateY(0); }
-.grid-item .project-cat { font-size: 11px; font-style: italic; letter-spacing: 1px; color: #ddd; margin-bottom: 4px; display: block; }
-.grid-item .project-name { font-size: 16px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: #fff;}
+.grid-item .project-cat { font-size: 10px; font-style: normal; letter-spacing: 2px; text-transform: lowercase; color: #aaa; margin-bottom: 5px; display: block; font-family: 'Montserrat', sans-serif; }
+.grid-item .project-name { font-size: 16px; font-weight: 400; text-transform: uppercase; letter-spacing: 1px; color: #fff; font-family: 'Montserrat', sans-serif; }
 
 /* Contact Page Form Layout */
 .contact-hero { padding: 80px 0 40px; text-align: center; }
@@ -638,10 +638,12 @@ textarea.form-control { resize: vertical; min-height: 100px; }
     .contact-form-container { width: 100% !important; padding: 25px 20px !important; }
 
     /* --- Portfolio Grid --- */
-    .grid { grid-template-columns: 1fr !important; gap: 20px !important; }
-    .grid-item { height: 280px; }
+    .grid { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; }
+    .grid-item { height: 200px; }
     .grid-item::after { opacity: 1 !important; }
-    .grid-item .project-info { opacity: 1 !important; transform: translateY(0) !important; bottom: 15px !important; left: 15px !important; }
+    .grid-item .project-info { opacity: 1 !important; transform: translateY(0) !important; bottom: 10px !important; left: 12px !important; }
+    .grid-item .project-cat { font-size: 8px !important; letter-spacing: 1px !important; }
+    .grid-item .project-name { font-size: 12px !important; letter-spacing: 0.5px !important; }
 
     /* --- Copyright --- */
     .copyright-bar { margin-top: 40px; }

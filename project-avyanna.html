@@ -25,7 +25,7 @@
 
         .project-title-section .project-cat {
             font-family: 'Playfair Display', serif;
-            font-style: italic;
+            font-style: normal;
             color: #777;
             font-size: 18px;
             letter-spacing: 2px;
@@ -157,6 +157,47 @@
             .slider-arrow { display: none; } /* Hide arrows on mobile */
         }
     </style>
+
+<style>
+/* ===== GALLERY WITH DESKTOP ARROWS ===== */
+.gallery-wrapper {
+    position: relative;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+.gallery-arrow {
+    display: none;
+}
+@media (min-width: 769px) {
+    .gallery-arrow {
+        display: flex;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        width: 48px;
+        height: 48px;
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 18px;
+        color: #111;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .gallery-arrow:hover {
+        background: #111;
+        color: #fff;
+        border-color: #111;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+    .gallery-arrow.left { left: -24px; }
+    .gallery-arrow.right { right: -24px; }
+}
+</style>
 </head>
 <body style="background-color: #ffffff;">
 
@@ -185,8 +226,8 @@
 
     <div class="scroll-track" id="scroll-track">
         <div class="sticky-image-wrapper" id="sticky-wrapper">
-            <img src="Avyanna, Hospitality/01.png" id="dynamic-hero-img" alt="Avyanna">
-            <div id="mist-effect"></div>
+            <img src="WEBSITE assests/Avyanna, Hospitality/01.png" id="dynamic-hero-img" alt="Avyanna">
+            <div id="mist-effect" style="opacity: 0; pointer-events: none;"></div>
         </div>
     </div>
 
@@ -211,42 +252,46 @@
                 <p>The Designers' Den was conceptualized as a modern sanctuary for creative professionals. The core idea was to strip away the sterile, corporate feel of traditional offices and replace it with organic textures, raw materials, and an abundance of natural light.</p>
                 <p>By blending exposed concrete with warm woodwork and subtle greenery, we created an environment that feels both industrial and incredibly inviting. It is a space designed not just for working, but for thinking, collaborating, and breathing life into new ideas.</p>
                 
-                <div class="project-gallery-carousel">
-                    <img src="Avyanna, Hospitality/01.png" alt="Project Image">
-                    <img src="Avyanna, Hospitality/02.png" alt="Project Image">
-                    <img src="Avyanna, Hospitality/03.jpg" alt="Project Image">
-                    <img src="Avyanna, Hospitality/04.jpg" alt="Project Image">
-                    <img src="Avyanna, Hospitality/05.png" alt="Project Image">
-                    <img src="Avyanna, Hospitality/06.png" alt="Project Image">
-                    <img src="Avyanna, Hospitality/07.png" alt="Project Image">
-                    <img src="Avyanna, Hospitality/08.png" alt="Project Image">
+                <div class="gallery-wrapper">
+                    <button class="gallery-arrow left" aria-label="Previous">&#8592;</button>
+                    <div class="project-gallery-carousel">
+                    <img src="WEBSITE assests/Avyanna, Hospitality/01.png" alt="Project Image">
+                    <img src="WEBSITE assests/Avyanna, Hospitality/02.png" alt="Project Image">
+                    <img src="WEBSITE assests/Avyanna, Hospitality/03.jpg" alt="Project Image">
+                    <img src="WEBSITE assests/Avyanna, Hospitality/04.jpg" alt="Project Image">
+                    <img src="WEBSITE assests/Avyanna, Hospitality/05.png" alt="Project Image">
+                    <img src="WEBSITE assests/Avyanna, Hospitality/06.png" alt="Project Image">
+                    <img src="WEBSITE assests/Avyanna, Hospitality/07.png" alt="Project Image">
+                    <img src="WEBSITE assests/Avyanna, Hospitality/08.png" alt="Project Image">
+                </div>
+                    <button class="gallery-arrow right" aria-label="Next">&#8594;</button>
                 </div>
             </div>
         </section>
 
         <section class="more-projects-section">
-            <h3 class="more-projects-title">EXPLORE <span style="font-family: 'Playfair Display', serif; font-style: italic; color: #777; text-transform: lowercase;">more works</span></h3>
+            <h3 class="more-projects-title">EXPLORE <span style="font-family: 'Playfair Display', serif; font-style: normal; color: #777; text-transform: lowercase;">more works</span></h3>
             
             <div class="slider-wrapper">
                 <button class="slider-arrow left-arrow" id="left-arrow">&#10094;</button>
                 
                 <div class="horizontal-slider" id="project-slider">
                     <a href="/project-moshams" class="slider-card">
-                        <img src="MoShams, Hospitality/01.jpg" alt="Moshams">
+                        <img src="WEBSITE assests/MoShams, Hospitality/01.jpg" alt="Moshams">
                         <div class="slider-info">
                             <span style="font-size: 10px; letter-spacing: 2px; color: #ddd; text-transform: uppercase;">Hospitality</span>
                             <h4 style="font-size: 18px; margin-top: 5px; text-transform: uppercase;">Moshams</h4>
                         </div>
                     </a>
                     <a href="/project-the-flowing-canopy" class="slider-card">
-                        <img src="The Flowing Canopy, Hospitality/You, Now Lines & Thoughts © Harsh Nigam _0001.jpg" alt="The Flowing Canopy">
+                        <img src="WEBSITE assests/The Flowing Canopy, Hospitality/You, Now Lines & Thoughts © Harsh Nigam _0001.jpg" alt="The Flowing Canopy">
                         <div class="slider-info">
                             <span style="font-size: 10px; letter-spacing: 2px; color: #ddd; text-transform: uppercase;">Hospitality</span>
                             <h4 style="font-size: 18px; margin-top: 5px; text-transform: uppercase;">The Flowing Canopy</h4>
                         </div>
                     </a>
                     <a href="/project-the-mud-villas" class="slider-card">
-                        <img src="The Mud Villas, Hospitality/01.jpg" alt="The Mud Villas">
+                        <img src="WEBSITE assests/The Mud Villas, Hospitality/01.jpg" alt="The Mud Villas">
                         <div class="slider-info">
                             <span style="font-size: 10px; letter-spacing: 2px; color: #ddd; text-transform: uppercase;">Hospitality</span>
                             <h4 style="font-size: 18px; margin-top: 5px; text-transform: uppercase;">The Mud Villas</h4>
@@ -312,7 +357,7 @@
                    
                    img.style.transform = `scale(${1.15 - (0.15 * progress)})`;
 
-                   mist.style.opacity = progress * 0.7; 
+                   mist.style.opacity = 0; 
                 
                 } else {
                    wrapper.style.width = `${startWidth}vw`;
@@ -362,5 +407,23 @@
             }
         });
     </script>
+
+
+<script>
+// Gallery Arrow Logic
+document.querySelectorAll('.gallery-wrapper').forEach(function(wrapper) {
+    var carousel = wrapper.querySelector('.project-gallery-carousel');
+    var leftBtn = wrapper.querySelector('.gallery-arrow.left');
+    var rightBtn = wrapper.querySelector('.gallery-arrow.right');
+    if (!carousel || !leftBtn || !rightBtn) return;
+    var scrollAmt = 500;
+    leftBtn.addEventListener('click', function() {
+        carousel.scrollBy({ left: -scrollAmt, behavior: 'smooth' });
+    });
+    rightBtn.addEventListener('click', function() {
+        carousel.scrollBy({ left: scrollAmt, behavior: 'smooth' });
+    });
+});
+</script>
 </body>
 </html>
