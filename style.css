@@ -753,7 +753,7 @@ a, a *, button, button *, .grid-item, .grid-item *, .pub-item, .pub-item *, .pub
     align-items: center;
     gap: 60px;
     flex-wrap: wrap;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 .pub-logo {
