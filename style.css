@@ -722,10 +722,10 @@ textarea.form-control { resize: vertical; min-height: 100px; }
 
 /* Custom Global Cursor */
 body {
-    cursor: url('assets/cursor-pencil.png'), auto !important;
+    cursor: url('assets/cursor-pencil.png?v=2'), auto !important;
 }
 a, button, .slider-arrow, .gallery-arrow {
-    cursor: url('assets/cursor-pencil.png'), pointer !important;
+    cursor: url('assets/cursor-pencil.png?v=2'), pointer !important;
 }
 /* End of style.css */
 
