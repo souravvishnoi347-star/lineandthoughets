@@ -221,19 +221,4 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }, { threshold: 0.3 }); 
     if(contactSection) contactObserver.observe(contactSection);
-
-    // ========================================
-    // 4. PARALLAX SCROLL ELEMENTS
-    // ========================================
-    const parallaxElements = document.querySelectorAll('.parallax-element');
-    if (parallaxElements.length > 0) {
-        window.addEventListener('scroll', () => {
-            const scrollY = window.scrollY;
-            parallaxElements.forEach(el => {
-                const speed = parseFloat(el.getAttribute('data-speed') || 0.2);
-                const rotation = parseFloat(el.getAttribute('data-rotation') || 0);
-                el.style.transform = `translateY(${scrollY * speed}px) rotate(${rotation}deg)`;
-            });
-        });
-    }
 });
