@@ -707,3 +707,15 @@ textarea.form-control { resize: vertical; min-height: 100px; }
         max-width: 90vw;
     }
 }
+
+/* Layout Fixes appended safely */
+.brief-main { min-width: 0 !important; }
+.project-gallery-carousel { width: 100% !important; }
+.project-gallery-carousel img {
+    height: 75vh !important;
+    max-height: 750px !important;
+    width: 85% !important;
+    flex: 0 0 auto !important;
+    object-fit: cover !important;
+}
+
