@@ -667,25 +667,32 @@ textarea.form-control { resize: vertical; min-height: 100px; }
    PROJECT GALLERY SWIPEABLE CAROUSEL
 ========================================= */
 .project-gallery-carousel {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 40px !important;
-    overflow-x: hidden !important;
-    scroll-snap-type: none !important;
-    margin-top: 40px !important;
-    margin-bottom: 20px !important;
-    cursor: default !important;
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    cursor: grab;
 }
+.project-gallery-carousel:active { cursor: grabbing; }
+.project-gallery-carousel::-webkit-scrollbar { display: none; }
 .project-gallery-carousel img {
-    height: auto !important;
-    width: 100% !important;
-    object-fit: contain !important;
-    scroll-snap-align: none !important;
+    height: 80vh;
+    max-height: 800px;
+    width: auto;
+    max-width: 95vw;
+    flex: 0 0 auto;
+    object-fit: contain;
+    scroll-snap-align: center;
 }
 
-/* Hide gallery arrows globally */
+/* Ensure arrows are visible again */
 .gallery-arrow {
-    display: none !important;
+    display: flex !important;
 }
 
 /* Make project title normal weight instead of bold */
@@ -693,3 +700,10 @@ textarea.form-control { resize: vertical; min-height: 100px; }
     font-weight: 500 !important;
 }
 
+@media screen and (max-width: 768px) {
+    .project-gallery-carousel img {
+        height: 400px;
+        width: auto;
+        max-width: 90vw;
+    }
+}
