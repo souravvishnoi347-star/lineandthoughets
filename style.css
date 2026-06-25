@@ -727,20 +727,5 @@ body {
 a, button, .slider-arrow, .gallery-arrow {
     cursor: url('assets/cursor-pencil.png'), pointer !important;
 }
-
-/* Parallax Ribbon Background */
-.parallax-ribbon-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-image: url('assets/bg-ribbon.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: -2;
-    opacity: 0.15; /* Subtle background overlay */
-    pointer-events: none;
-}
+/* End of style.css */
 
