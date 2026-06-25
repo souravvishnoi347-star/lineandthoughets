@@ -87,6 +87,14 @@
             text-align: justify;
         }
 
+        .studio-text-wrapper-single {
+            flex: 1.5;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            text-align: justify;
+        }
+
         .studio-image-wrapper {
             flex: 1;
             position: relative;
@@ -246,10 +254,21 @@
         }
         @media (max-width: 600px) {
             .team-row-2, .team-bottom-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr 1fr;
+                gap: 15px;
             }
             .team-huge-heading {
                 font-size: 40px;
+            }
+            .team-name {
+                font-size: 13px;
+            }
+            .team-role {
+                font-size: 9px;
+                letter-spacing: 1px;
+            }
+            .team-info {
+                padding: 12px;
             }
         }
 
@@ -332,8 +351,17 @@
                 width: 100%;
                 aspect-ratio: 1/1;
             }
+            .stux-hero {
+                margin-bottom: 40px !important;
+            }
             .studio-hero {
-                padding-top: 120px;
+                padding-top: 0 !important;
+            }
+            .minds-heading-wrapper {
+                margin-bottom: 10px !important;
+            }
+            .minds-heading-wrapper .works-main-title {
+                justify-content: flex-start !important;
             }
             .studio-heading { font-size: 40px; margin-bottom: 40px; }
             .studio-quote { font-size: 20px; margin-bottom: 40px; }
@@ -364,42 +392,31 @@
 
     <!-- New Hero Section -->
     <section class="stux-hero">
-        <div class="stux-hero-bg" style="background-image: url('assets/contact-bottom.png');"></div>
+        <div class="stux-hero-bg" style="background-image: url('assets/studio-pic.png');"></div>
         <div class="stux-hero-overlay"></div>
-        
-        <div class="stux-hero-content">
-            <h1 class="stux-title">STUDIO</h1>
-            <p class="stux-subtitle">Luxury architectural solutions crafted<br>for modern living</p>
-        </div>
     </section>
 
     <!-- Legacy Content Begins -->
-    <section class="studio-hero" style="padding-top: 60px;">
-        <div class="minds-behind-container" style="margin-bottom: 60px;">
-            <div class="minds-part">
-                <span class="light-text" style="font-size: 5vw; letter-spacing: 4px;">THE MINDS</span>
-                <div class="minds-line"></div>
-            </div>
-            <span class="dark-bold" style="font-size: 5vw; letter-spacing: 4px;">BEHIND</span>
+    <section class="studio-hero" style="padding-top: 20px;">
+        <div class="minds-heading-wrapper" style="margin-bottom: 60px;">
+            <h2 class="works-main-title" style="margin: 0; display: flex; align-items: baseline; gap: 15px;">
+                <span id="type-minds-title" style="font-size: 48px; font-weight: bold; color: #000; letter-spacing: 6px; text-transform: uppercase; font-family: 'Montserrat', sans-serif;"></span>
+                <span id="type-behind-title" style="font-size: 48px; font-weight: bold; color: #888; letter-spacing: 6px; text-transform: uppercase; font-family: 'Montserrat', sans-serif;"></span>
+            </h2>
         </div>
         
-        <div class="studio-quote">
-            "Designing spaces that balance emotion, function, and timeless beauty — made to be experienced, remembered, and lived."
-        </div>
-
         <div class="studio-content">
-            <div class="studio-text-wrapper">
-                <div class="studio-col">
-                    <p>Lines & Thoughts is a design studio founded in 2020 by Ar. Kartik Khurana and I.D. Akshay Khurana, working across architecture, interiors, and master planning. We believe every space has a story — so we design around the client's needs, the place, and how people actually live in it.</p>
-                </div>
-                <div class="studio-col">
-                    <p>From luxury homes to hotels and commercial spaces, our focus stays the same: thoughtful design, good craftsmanship, and spaces that last — built with sustainability and natural light in mind.</p>
-                    <p>We work closely with clients and craftsmen to bring every idea to life, the right way.</p>
-                </div>
-            </div>
             <div class="studio-image-wrapper">
-                <img src="assets/founders.jpg" alt="Kartik and Akshay Khurana">
+                <img src="assets/studio-founders.jpg?v=1" alt="Kartik and Akshay Khurana">
                 <div class="studio-image-caption">Ar. Kartik & I.D. Akshay</div>
+            </div>
+            
+            <div class="studio-text-wrapper-single">
+                <p>Lines & Thoughts is a design studio started in 2020 by Ar. Kartik Khurana and I.D. Akshay Khurana. We work on architecture, interiors, and master planning — turning every project into a space that feels personal and meaningful.</p>
+                <p>We believe every space has its own story. Our process starts with understanding what the client needs, then shapes it around the place, climate, materials, and how people will actually live or work in that space. We focus on clean design, good detailing, and spaces that feel as good as they look.</p>
+                <p>Our work includes luxury homes, hotels, commercial spaces, and custom interiors. No matter the project size, we focus on quality, creativity, and design that lasts. We also keep sustainability in mind — using natural light, smart material choices, and climate-friendly planning wherever we can.</p>
+                <p>We work closely with clients, consultants, and craftsmen to bring every idea to life with care and precision.</p>
+                <p>Lines & Thoughts isn't just a design studio — it's a way of thinking. We create spaces that people don't just see, but feel.</p>
             </div>
         </div>
     </section>
@@ -408,21 +425,20 @@
         <div class="team-top-row">
             <div class="team-left-pane">
                 <div class="team-small-tag">Our Team</div>
-                <h2 class="team-huge-heading">People<br>Behind the Work.</h2>
-                <div class="team-subtext">A small team focused on clarity, detail, and execution.</div>
+                <h2 class="team-huge-heading">PEOPLE<br><span style="color: #777;">BEHIND THE WORK</span></h2>
             </div>
             <div class="team-right-pane">
                 <!-- Row 1: 2 members -->
                 <div class="team-row-2">
                     <div class="team-member">
-                        <img src="WEBSITE assests/studio-assets/Sagar Nawani (Project Eng.).jpg" alt="Sagar Nawani">
+                        <img src="optimized-assets/studio-assets/Sagar Nawani (Project Eng.).jpg" alt="Sagar Nawani">
                         <div class="team-info">
                             <div class="team-name">Sagar Nawani</div>
                             <div class="team-role">Project Engineer</div>
                         </div>
                     </div>
                     <div class="team-member">
-                        <img src="WEBSITE assests/studio-assets/Gaurav Chauhan ( Civil Eng. & Architectural Designer ).png" alt="Gaurav Chauhan">
+                        <img src="optimized-assets/studio-assets/Gaurav Chauhan ( Civil Eng. & Architectural Designer ).png" alt="Gaurav Chauhan">
                         <div class="team-info">
                             <div class="team-name">Gaurav Chauhan</div>
                             <div class="team-role">Civil Engineer<br>Architectural Designer</div>
@@ -435,42 +451,42 @@
         <!-- Bottom Grid: 6 members full width -->
         <div class="team-bottom-grid">
             <div class="team-member">
-                <img src="WEBSITE assests/studio-assets/Mukul Maliyan (Architectural designer ).png" alt="Mukul Maliyan">
+                <img src="optimized-assets/studio-assets/Mukul Maliyan (Architectural designer ).png" alt="Mukul Maliyan">
                 <div class="team-info">
                     <div class="team-name">Mukul Maliyan</div>
                     <div class="team-role">Architectural Designer</div>
                 </div>
             </div>
             <div class="team-member">
-                <img src="WEBSITE assests/studio-assets/Prachi Chaudhary(interior designer).jpeg" alt="Prachi Chaudhary">
+                <img src="optimized-assets/studio-assets/Prachi Chaudhary(interior designer).jpeg" alt="Prachi Chaudhary">
                 <div class="team-info">
                     <div class="team-name">Prachi Chaudhary</div>
                     <div class="team-role">Interior Designer</div>
                 </div>
             </div>
             <div class="team-member">
-                <img src="WEBSITE assests/studio-assets/Sima Kushwah (interior designer).jpg" alt="Sima Kushwah">
+                <img src="optimized-assets/studio-assets/Sima Kushwah (interior designer).jpg" alt="Sima Kushwah">
                 <div class="team-info">
                     <div class="team-name">Sima Kushwah</div>
                     <div class="team-role">Interior Designer</div>
                 </div>
             </div>
             <div class="team-member">
-                <img src="WEBSITE assests/studio-assets/Sonia Sharma (interior designer).jpg" alt="Sonia Sharma">
+                <img src="optimized-assets/studio-assets/Sonia Sharma (interior designer).jpg" alt="Sonia Sharma">
                 <div class="team-info">
                     <div class="team-name">Sonia Sharma</div>
                     <div class="team-role">Interior Designer</div>
                 </div>
             </div>
             <div class="team-member">
-                <img src="WEBSITE assests/studio-assets/Diksha Taneja (intern).jpg" alt="Diksha Taneja">
+                <img src="optimized-assets/studio-assets/Diksha Taneja (intern).jpg" alt="Diksha Taneja">
                 <div class="team-info">
                     <div class="team-name">Diksha Taneja</div>
                     <div class="team-role">Intern</div>
                 </div>
             </div>
             <div class="team-member">
-                <img src="WEBSITE assests/studio-assets/Kanika Mehta (intern).jpg" alt="Kanika Mehta">
+                <img src="optimized-assets/studio-assets/Kanika Mehta (intern).jpg" alt="Kanika Mehta">
                 <div class="team-info">
                     <div class="team-name">Kanika Mehta</div>
                     <div class="team-role">Intern</div>
@@ -488,6 +504,34 @@
     </footer>
     
     <script src="script.js?v=3"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const mindsEl = document.getElementById('type-minds-title');
+            const behindEl = document.getElementById('type-behind-title');
+            if(mindsEl && behindEl) {
+                function typeWriter(element, text, speed, callback) {
+                    element.style.borderRight = "2px solid currentColor";
+                    element.style.animation = "blink 0.75s step-end infinite";
+                    let i = 0;
+                    function type() {
+                        if (i < text.length) { element.textContent += text.charAt(i++); setTimeout(type, speed); }
+                        else { element.style.borderRight = "none"; element.style.animation = "none"; if (callback) callback(); }
+                    }
+                    type();
+                }
+                
+                // Use Intersection Observer so it types when user scrolls to it
+                const observer = new IntersectionObserver((entries) => {
+                    if (entries[0].isIntersecting) {
+                        setTimeout(() => { typeWriter(mindsEl, "THE MINDS", 80, () => { typeWriter(behindEl, "BEHIND", 80); }); }, 200);
+                        observer.disconnect();
+                    }
+                }, { threshold: 0.5 });
+                
+                observer.observe(mindsEl);
+            }
+        });
+    </script>
 </body>
 </html>
 

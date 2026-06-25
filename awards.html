@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievements | Lines & Thoughts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=6">
+    
+    <style>
+        body {
+            background-color: #f8f8f6;
+            color: #111;
+            overflow-x: hidden;
+        }
+
+        .awards-hero {
+            padding: 160px 5% 80px;
+            text-align: center;
+        }
+        
+        .awards-hero-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 6vw;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .awards-hero-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            color: #666;
+            font-weight: 500;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .stux-hero {
+            position: relative;
+            width: 100%;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin-top: 0;
+        }
+        .stux-hero-bg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -2;
+            transform: scale(1);
+            animation: zoomBg 20s infinite alternate linear;
+        }
+        .stux-hero-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.9) 100%);
+            z-index: -1;
+        }
+        .stux-hero-content {
+            text-align: center;
+            color: #fff;
+            z-index: 2;
+        }
+        .stux-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 7vw;
+            font-weight: 900;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        @keyframes zoomBg {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+
+        .awards-section {
+            padding: 40px 5% 100px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .award-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .award-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .award-image-container {
+            width: 100%;
+            height: 120px;
+            overflow: hidden;
+            border-radius: 2px;
+            margin-bottom: 20px;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .award-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .award-year {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            color: #c8a96e;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .award-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.5;
+            color: #111;
+        }
+
+        /* Publications Section */
+        .pub-section {
+            padding: 100px 5%;
+            background-color: #f0f0f0;
+        }
+
+        .pub-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .pub-grid {
+            width: 70%;
+            max-width: none;
+            margin-left: auto;
+            margin-right: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            align-items: start;
+        }
+
+        .pub-item {
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: 4px;
+            background: #fff;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .pub-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .pub-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .pub-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .pub-item:hover .pub-overlay {
+            opacity: 1;
+        }
+        
+        .pub-icon {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+            font-family: 'Montserrat', sans-serif;
+            border: 2px solid #fff;
+            padding: 10px 20px;
+            border-radius: 30px;
+        }
+
+        @media (max-width: 1024px) {
+            .awards-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .stux-hero { height: 70vh; margin-bottom: 40px !important; }
+            .stux-title { font-size: 7.5vw; }
+            .awards-grid { grid-template-columns: 1fr; }
+            .pub-grid { grid-template-columns: 1fr; }
+            .awards-hero-title { font-size: 40px; }
+            .awards-section { padding-top: 0 !important; }
+            .spotlight-heading-wrapper { margin-bottom: 10px !important; }
+            .spotlight-heading-wrapper .works-main-title { justify-content: flex-start !important; }
+        }
+
+        /* Lightbox Modal */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0; top: 0; width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90vh;
+            object-fit: contain;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: 300;
+            cursor: pointer;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <nav class="static-nav">
+        <a href="index.html" class="nav-logo-wrapper">
+            <img src="assets/icon.png" class="nav-logo-img" alt="Logo">
+            <div class="nav-logo-text-group">
+                <div class="nav-logo-main"><span>LINES</span> & THOUGHTS</div>
+                <div class="nav-logo-sub">BY KARTIK | AKSHAY</div>
+            </div>
+        </a>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+       <div class="nav-links">
+            <a href="work.html">Work</a>
+            <a href="about.html">Studio</a>
+            <a href="awards.html" class="active">Achievements</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <section class="stux-hero">
+        <div class="stux-hero-bg" style="background-image: url('assets/acheivements-cover.png');"></div>
+        <div class="stux-hero-overlay"></div>
+    </section>
+
+    <section class="awards-section">
+        <div class="spotlight-heading-wrapper" style="margin-bottom: 70px;">
+            <h2 class="works-main-title" style="margin: 0; display: flex; align-items: baseline; gap: 15px;">
+                <span id="type-inthe-title" style="font-size: 48px; font-weight: bold; color: #000; letter-spacing: 6px; text-transform: uppercase; font-family: 'Montserrat', sans-serif;"></span>
+                <span id="type-spotlight-title" style="font-size: 48px; font-weight: bold; color: #888; letter-spacing: 6px; text-transform: uppercase; font-family: 'Montserrat', sans-serif;"></span>
+            </h2>
+        </div>
+        <div class="awards-grid">
+            <div class="award-card">
+                <div class="award-image-container">
+                    <img src="ACHIEVEMENTS/AWARDS/ARCHEX 2026        BEST COMMERCIAL (OFFICE) AND BEST COMMERCIAL (RESTAURANT).jpg" alt="Archex 2026">
+                </div>
+                <div class="award-year">ARCHEX 2026</div>
+                <div class="award-title">Best Commercial (Office) &<br>Best Commercial (Restaurant)</div>
+            </div>
+
+            <div class="award-card">
+                <div class="award-image-container">
+                    <img src="ACHIEVEMENTS/AWARDS/ULTRATECH ICI AWARDS 2023       BEST YOUNG ARCHITECT 2023.jpg" alt="Ultratech ICI Awards 2023">
+                </div>
+                <div class="award-year">ULTRATECH ICI 2023</div>
+                <div class="award-title">Best Young Architect</div>
+            </div>
+
+            <div class="award-card">
+                <div class="award-image-container">
+                    <img src="ACHIEVEMENTS/AWARDS/National Architecture & Interior Design Excellence Awards & Conference 2021-Global Edition          “Most Promising & Creative Architecture  & Interior Design Firm of the Year 2021” Uttrakhand.jpg" alt="National Excellence Awards 2021">
+                </div>
+                <div class="award-year">NATIONAL EXCELLENCE 2021</div>
+                <div class="award-title">Most Promising & Creative Firm<br>(Uttarakhand)</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pub-section">
+        <div class="pub-header">
+            <h2 class="awards-hero-title" style="font-size: 40px;">PUBLICATIONS</h2>
+        </div>
+
+        <div class="container" style="margin-bottom: 80px;">
+            <div class="publications-grid">
+                <a href="https://www.architectureplusdesign.in/architecture/step-inside-the-designers-den-by-lines-thoughts-thats-inviting-second-glances-in-a-tier-3-city/" target="_blank" class="pub-logo">
+                    <img src="assets/PUBLICATIONS/AD-logo.webp" alt="Architecture + Design">
+                </a>
+                <a href="https://www.architectandinteriorsindia.com/projects/44000-sq-ft-food-court-in-uttarakhand-redefined-as-a-climate-responsive-public-landscape" target="_blank" class="pub-logo">
+                    <img src="assets/PUBLICATIONS/images.jpg" alt="Architect and Interiors India" style="transform: scale(1.6);">
+                </a>
+                <a href="https://volzero.com/articles/view/the-designers-den-by-lines-and-thoughts" target="_blank" class="pub-logo">
+                    <img src="assets/PUBLICATIONS/logo.png" alt="Volume Zero">
+                </a>
+                <a href="https://www.commercialdesignindia.com/projects/walk-into-this-1600-sq-ft-haridwar-studio-that-took-its-cues-from-the-ganges" target="_blank" class="pub-logo">
+                    <img src="assets/PUBLICATIONS/SnCVty3T-Commercial-Design-2025-Logo.png" alt="Commercial Design India">
+                </a>
+            </div>
+        </div>
+
+        <div class="pub-grid">
+            <a href="https://www.architectureplusdesign.in/architecture/step-inside-the-designers-den-by-lines-thoughts-thats-inviting-second-glances-in-a-tier-3-city/" target="_blank" class="pub-item">
+                <img src="ACHIEVEMENTS/PUBLICATIONS/A.jpg" alt="Publication A">
+                <div class="pub-overlay"><span class="pub-icon">READ MORE</span></div>
+            </a>
+            
+            <a href="https://www.commercialdesignindia.com/projects/walk-into-this-1600-sq-ft-haridwar-studio-that-took-its-cues-from-the-ganges" target="_blank" class="pub-item">
+                <img src="ACHIEVEMENTS/PUBLICATIONS/B.jpg" alt="Publication B">
+                <div class="pub-overlay"><span class="pub-icon">READ MORE</span></div>
+            </a>
+
+            <a href="https://volzero.com/articles/view/the-designers-den-by-lines-and-thoughts" target="_blank" class="pub-item">
+                <img src="ACHIEVEMENTS/PUBLICATIONS/Vol Zero.jpg" alt="Volume Zero">
+                <div class="pub-overlay"><span class="pub-icon">READ MORE</span></div>
+            </a>
+
+            <a href="#" class="pub-item">
+                <img src="ACHIEVEMENTS/PUBLICATIONS/aa.jpg" alt="Publication AA">
+                <div class="pub-overlay"><span class="pub-icon">READ MORE</span></div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox-modal">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <div class="minimal-quote-footer">
+        <p class="minimal-quote-text">"Good design is obvious. Great design is transparent."</p>
+    </div>
+
+    <footer class="footer-new footer-minimal">
+        <div class="container">
+            <div class="copyright-bar">
+                <p>all rights reserved to lines & thoughts | built by . <a href="#">hostbolt</a></p>
+            </div>
+        </div> 
+    </footer>
+    
+    <script src="script.js?v=3"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const intheEl = document.getElementById('type-inthe-title');
+            const spotlightEl = document.getElementById('type-spotlight-title');
+            if(intheEl && spotlightEl) {
+                function typeWriter(element, text, speed, callback) {
+                    element.style.borderRight = "2px solid currentColor";
+                    element.style.animation = "blink 0.75s step-end infinite";
+                    let i = 0;
+                    function type() {
+                        if (i < text.length) { element.textContent += text.charAt(i++); setTimeout(type, speed); }
+                        else { element.style.borderRight = "none"; element.style.animation = "none"; if (callback) callback(); }
+                    }
+                    type();
+                }
+                setTimeout(() => { typeWriter(intheEl, "IN THE", 80, () => { typeWriter(spotlightEl, "SPOTLIGHT", 80); }); }, 200);
+            }
+        });
+    </script>
+    <script>
+        function openLightbox(src) {
+            document.getElementById('lightbox').style.display = 'flex';
+            document.getElementById('lightbox-img').src = src;
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        // Close on background click
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -6,6 +6,8 @@ window.scrollTo(0, 0);
 
 document.addEventListener("DOMContentLoaded", () => {
     
+    // Removed JS cursor to prevent mobile/dev-tools missing cursor bug
+
     // ========================================
     // 1. MOBILE MENU LOGIC (Runs on ALL Pages)
     // ========================================

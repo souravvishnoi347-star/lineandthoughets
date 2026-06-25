@@ -16,7 +16,7 @@ body {
 .super-light-text, 
 .project-cat,
 .about-main-title .light-texture {
-    font-family: 'Playfair Display', serif !important;
+    font-family: 'Montserrat', sans-serif !important;
     font-style: italic;
     letter-spacing: 1px;
 }
@@ -302,8 +302,8 @@ header { position: absolute; top: 0; left: 0; width: 100%; padding: 30px 40px; z
 .animated-line.expand { width: 100%; }
 .works-title-row { display: flex; justify-content: space-between; align-items: flex-end; }
 .works-main-title { font-size: 48px; margin: 0; min-height: 60px; display: flex; align-items: baseline; gap: 15px; }
-#type-crafted { font-weight: bold !important; color: #000; letter-spacing: 6px; text-transform: uppercase; font-family: 'Arial Arabic', Arial, sans-serif !important; }
-#type-spaces { font-style: normal !important; font-weight: normal !important; color: #888; letter-spacing: 2px; text-transform: lowercase; font-family: 'M Hei PRC', sans-serif !important; }
+#type-crafted { font-weight: bold !important; color: #000; letter-spacing: 6px; text-transform: uppercase; font-family: 'Montserrat', sans-serif !important; }
+#type-spaces { font-style: normal !important; font-weight: normal !important; color: #888; letter-spacing: 2px; text-transform: lowercase; font-family: 'Montserrat', sans-serif !important; }
 .view-all-link { font-size: 10px; letter-spacing: 2px; color: #888; text-decoration: none; font-weight: 600; transition: color 0.3s; margin-bottom: 5px; }
 .view-all-link:hover { color: #111; }
 .works-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; width: 100%; }
@@ -449,8 +449,8 @@ textarea.form-control { resize: vertical; min-height: 100px; }
 .social-link:hover { background: #111 !important; color: #fff !important; border-color: #111 !important; }
 /* Copyright Bar */
 .copyright-bar { text-align: center; margin-top: 80px; padding-top: 25px; border-top: 1px solid #f0f0f0; margin-bottom: -50px; }
-.copyright-bar p { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: #444; font-weight: 600; font-family: 'Calibri', sans-serif !important;}
-.copyright-bar a { color: #111; text-decoration: none; font-weight: 800; transition: color 0.3s; font-family: 'Calibri', sans-serif !important;}
+.copyright-bar p { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: #444; font-weight: 600; font-family: 'Montserrat', sans-serif !important;}
+.copyright-bar a { color: #111; text-decoration: none; font-weight: 800; transition: color 0.3s; font-family: 'Montserrat', sans-serif !important;}
 .copyright-bar a:hover { color: #777; }
 
 /* =========================================
@@ -609,7 +609,8 @@ textarea.form-control { resize: vertical; min-height: 100px; }
     /* --- Signature Works --- */
     #signature-works { padding: 60px 0; }
     .works-title-row { flex-direction: row; align-items: baseline; justify-content: space-between; gap: 10px; }
-    .works-main-title { font-size: 28px !important; min-height: auto; gap: 10px !important; }
+    .works-main-title { flex-wrap: wrap !important; justify-content: center !important; gap: 8px !important; }
+    .works-main-title span { font-size: 26px !important; letter-spacing: 3px !important; text-align: center; line-height: 1.2; }
     .works-small-title-group { font-size: 12px !important; letter-spacing: 2px; }
     .works-grid { grid-template-columns: 1fr !important; gap: 20px; }
     .project-overlay { opacity: 1 !important; background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent) !important; padding: 15px 20px; }
@@ -720,14 +721,118 @@ textarea.form-control { resize: vertical; min-height: 100px; }
 }
 
 
-/* Custom Global Cursor */
-body {
-    cursor: url('assets/cursor-pencil.png?v=2'), auto !important;
+/* --- Flawless Native Pencil Cursor --- */
+* {
+    cursor: url('assets/cursor-pencil.png?v=3'), auto !important;
 }
-a, button, .slider-arrow, .gallery-arrow {
-    cursor: url('assets/cursor-pencil.png?v=2'), pointer !important;
+a, a *, button, button *, .grid-item, .grid-item *, .pub-item, .pub-item *, .pub-logo, .filter-btn, input, textarea, select {
+    cursor: url('assets/cursor-pencil.png?v=3'), pointer !important;
 }
-/* End of style.css */
 
 /* End of style.css */
+
+
+/* Publications Section */
+.publications-section {
+    padding: 60px 0 80px 0;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+.publications-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: #555;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+.publications-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.pub-logo {
+    display: block;
+    width: 160px;
+    height: 80px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    mix-blend-mode: multiply;
+}
+.pub-logo:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+.pub-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: grayscale(100%) contrast(1.2);
+    transition: filter 0.3s ease;
+}
+.pub-logo:hover img {
+    filter: grayscale(0%) contrast(1);
+}
+@media (max-width: 768px) {
+    .publications-grid {
+        gap: 30px;
+    }
+    .pub-logo {
+        width: 120px;
+        height: 60px;
+    }
+}
+
+
+/* Minimal Signature Quote Footer */
+.minimal-quote-footer {
+    padding: 30px 5% 10px 5%;
+    text-align: center;
+    background-color: transparent;
+}
+.minimal-quote-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    font-style: italic;
+    color: #111;
+    font-weight: 400;
+    max-width: 800px;
+    margin: 0 auto;
+    letter-spacing: 1px;
+}
+@media (max-width: 768px) {
+    .minimal-quote-footer { padding: 20px 5% 5px 5%; }
+    .minimal-quote-text { font-size: 22px; }
+}
+
+
+/* Footer Dark variant for minimal quote */
+.footer-dark {
+    background-color: #111 !important;
+    border-top: none !important;
+}
+.footer-dark .copyright-bar {
+    border-top: 1px solid #333 !important;
+}
+.footer-dark .copyright-bar p {
+    color: #888 !important;
+}
+.footer-dark .copyright-bar a {
+    color: #fff !important;
+}
+
+/* Minimal Footer (for pages with no contact info at bottom) */
+.footer-minimal {
+    padding: 0 !important;
+    border: none !important;
+}
+.footer-minimal .copyright-bar {
+    margin-top: 20px !important;
+    padding-bottom: 20px !important;
+}
 
