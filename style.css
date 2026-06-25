@@ -752,7 +752,7 @@ a, a *, button, button *, .grid-item, .grid-item *, .pub-item, .pub-item *, .pub
     justify-content: center;
     align-items: center;
     gap: 60px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     max-width: 1200px;
     margin: 0 auto;
 }
