@@ -729,3 +729,17 @@ a, button, .slider-arrow, .gallery-arrow {
 }
 /* End of style.css */
 
+
+/* Parallax Elements */
+.parallax-element {
+    position: absolute;
+    z-index: -1;
+    opacity: 0.15;
+    pointer-events: none;
+    transition: transform 0.1s ease-out;
+}
+.parallax-element img {
+    width: 100%;
+    height: auto;
+}
+
