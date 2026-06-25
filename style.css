@@ -667,30 +667,29 @@ textarea.form-control { resize: vertical; min-height: 100px; }
    PROJECT GALLERY SWIPEABLE CAROUSEL
 ========================================= */
 .project-gallery-carousel {
-    display: flex;
-    gap: 20px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    margin-top: 40px;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
-    cursor: grab;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 40px !important;
+    overflow-x: hidden !important;
+    scroll-snap-type: none !important;
+    margin-top: 40px !important;
+    margin-bottom: 20px !important;
+    cursor: default !important;
 }
-.project-gallery-carousel:active { cursor: grabbing; }
-.project-gallery-carousel::-webkit-scrollbar { display: none; }
 .project-gallery-carousel img {
-    height: 450px;
-    width: 85%;
-    flex: 0 0 auto;
-    object-fit: cover;
-    scroll-snap-align: center;
+    height: auto !important;
+    width: 100% !important;
+    object-fit: contain !important;
+    scroll-snap-align: none !important;
 }
 
-@media screen and (max-width: 768px) {
-    .project-gallery-carousel img {
-        height: 300px;
-        width: 90%;
-    }
+/* Hide gallery arrows globally */
+.gallery-arrow {
+    display: none !important;
 }
+
+/* Make project title normal weight instead of bold */
+.project-title-section .project-title-main {
+    font-weight: 500 !important;
+}
+
