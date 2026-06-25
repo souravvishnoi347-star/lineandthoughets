@@ -84,9 +84,19 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 600); 
         }, 300);
 
+        let activeTypewriters = 0;
+        const typewriterAudio = new Audio('assets/typewritter.mp3');
+        typewriterAudio.loop = true;
+
         function typeWriter(element, text, speed, callback) {
             element.classList.add('typing-cursor');
             let i = 0;
+            
+            if (activeTypewriters === 0) {
+                typewriterAudio.play().catch(e => console.log('Autoplay blocked by browser'));
+            }
+            activeTypewriters++;
+
             function type() {
                 if (i < text.length) {
                     element.textContent += text.charAt(i); 
@@ -94,6 +104,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     setTimeout(type, speed);
                 } else {
                     element.classList.remove('typing-cursor'); 
+                    activeTypewriters--;
+                    if (activeTypewriters === 0) {
+                        typewriterAudio.pause();
+                        typewriterAudio.currentTime = 0;
+                    }
                     if (callback) callback();
                 }
             }
