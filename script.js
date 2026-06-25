@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         let currentSlide = 0;
-        const slideDuration = 5000; 
+        const slideDuration = 2000; 
         let slideInterval;
 
         function updateProgressBar() {
