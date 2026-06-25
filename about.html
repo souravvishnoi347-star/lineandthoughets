@@ -278,18 +278,6 @@
             background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.9) 100%);
             z-index: -1;
         }
-        .stux-navbar {
-            position: absolute;
-            top: 0; left: 0; width: 100%;
-            padding: 30px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 10;
-        }
-        .stux-navbar .nav-logo-main { color: #fff; }
-        .stux-navbar .nav-logo-sub { color: #ddd; }
-        .stux-navbar .bar { background-color: #fff; }
         .stux-hero-content {
             text-align: center;
             color: #fff;
@@ -353,34 +341,32 @@
     </style>
 </head>
 <body>
+    <nav class="static-nav">
+        <a href="index.html" class="nav-logo-wrapper">
+            <img src="assets/icon.png" class="nav-logo-img" alt="Logo">
+            <div class="nav-logo-text-group">
+                <div class="nav-logo-main"><span>LINES</span> & THOUGHTS</div>
+                <div class="nav-logo-sub">BY KARTIK | AKSHAY</div>
+            </div>
+        </a>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+       <div class="nav-links">
+            <a href="work.html">Work</a>
+            <a href="about.html" class="active">Studio</a>
+            <a href="awards.html">Achievements</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
     <!-- New Hero Section -->
     <section class="stux-hero">
         <div class="stux-hero-bg" style="background-image: url('assets/contact-bottom.png');"></div>
         <div class="stux-hero-overlay"></div>
         
-        <header class="stux-navbar">
-            <a href="index.html" class="nav-logo-wrapper">
-                <img src="assets/icon.png" class="nav-logo-img" alt="Logo" style="filter: brightness(0) invert(1);">
-                <div class="nav-logo-text-group">
-                    <div class="nav-logo-main"><span>LINES</span> & THOUGHTS</div>
-                    <div class="nav-logo-sub">BY KARTIK | AKSHAY</div>
-                </div>
-            </a>
-            
-            <div class="menu-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-            
-            <div class="nav-links">
-                <a href="work.html" style="color: #fff;">Work</a>
-                <a href="about.html" class="active" style="color: #fff;">Studio</a>
-                <a href="awards.html" style="color: #fff;">Achievements</a>
-                <a href="contact.html" style="color: #fff;">Contact</a>
-            </div>
-        </header>
-
         <div class="stux-hero-content">
             <h1 class="stux-title">STUDIO</h1>
             <p class="stux-subtitle">Luxury architectural solutions crafted<br>for modern living</p>
