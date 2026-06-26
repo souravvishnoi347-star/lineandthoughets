@@ -899,3 +899,267 @@ a, a *, button, button *, .grid-item, .grid-item *, .pub-item, .pub-item *, .pub
     .lightbox-prev { left: 0; }
     .lightbox-next { right: 0; }
 }
+
+
+/* ============================================= */
+/* COMPREHENSIVE MOBILE OPTIMIZATION v2          */
+/* ============================================= */
+
+@media screen and (max-width: 768px) {
+
+    /* --- Project Page Hero Image --- */
+    .scroll-track {
+        height: 120vh !important;
+    }
+    .sticky-image-wrapper {
+        width: 90vw !important;
+        height: 55vh !important;
+        top: 8vh !important;
+        border-radius: 10px !important;
+    }
+    #dynamic-hero-img {
+        transform: scale(1.05) !important;
+    }
+
+    /* --- Project Title --- */
+    .project-title-section {
+        padding: 90px 15px 25px !important;
+    }
+    .project-title-section .project-title-main {
+        font-size: 9vw !important;
+        letter-spacing: 2px !important;
+    }
+    .project-title-section .project-cat {
+        font-size: 12px !important;
+        letter-spacing: 1.5px !important;
+    }
+
+    /* --- Project Brief Section (Sidebar + Main) --- */
+    .project-content-layer {
+        padding: 40px 0 !important;
+    }
+    .project-brief {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+        margin-bottom: 50px !important;
+        padding: 0 15px !important;
+    }
+    .brief-sidebar {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 5px 20px !important;
+    }
+    .brief-sidebar h4 {
+        font-size: 10px !important;
+        margin-bottom: 5px !important;
+        padding-bottom: 5px !important;
+    }
+    .brief-sidebar p {
+        font-size: 13px !important;
+        margin-bottom: 15px !important;
+    }
+    .brief-main h2 {
+        font-size: 22px !important;
+        line-height: 1.3 !important;
+        margin-bottom: 15px !important;
+    }
+    .brief-main p {
+        font-size: 14px !important;
+        line-height: 1.8 !important;
+        margin-bottom: 20px !important;
+    }
+
+    /* --- Gallery Carousel (Main Project Images) --- */
+    .gallery-wrapper {
+        margin-top: 20px !important;
+        margin-bottom: 10px !important;
+        overflow: hidden !important;
+    }
+    .gallery-arrow {
+        display: none !important;
+    }
+    .project-gallery-carousel {
+        gap: 10px !important;
+        padding-bottom: 5px !important;
+        margin-top: 20px !important;
+        margin-bottom: 10px !important;
+    }
+    .project-gallery-carousel img {
+        height: 50vh !important;
+        max-height: 400px !important;
+        width: auto !important;
+        max-width: 85vw !important;
+        flex: 0 0 auto !important;
+        object-fit: contain !important;
+        border-radius: 6px !important;
+    }
+
+    /* --- Explore More Works Section --- */
+    .more-projects-section {
+        padding: 40px 0 !important;
+        margin-top: 20px !important;
+        clear: both !important;
+        position: relative !important;
+        z-index: 1 !important;
+    }
+    .more-projects-title {
+        font-size: 16px !important;
+        letter-spacing: 2px !important;
+        margin-bottom: 25px !important;
+    }
+    .slider-wrapper {
+        position: relative !important;
+        overflow: visible !important;
+    }
+    .slider-arrow {
+        display: none !important;
+    }
+    .horizontal-slider {
+        padding: 0 15px 15px 15px !important;
+        gap: 12px !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+    .slider-card {
+        flex: 0 0 250px !important;
+        height: 300px !important;
+        border-radius: 8px !important;
+    }
+    .slider-card::after {
+        opacity: 1 !important;
+        background: linear-gradient(to top, rgba(0,0,0,0.7), transparent 60%) !important;
+    }
+    .slider-info {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        bottom: 15px !important;
+        left: 15px !important;
+    }
+
+    /* --- Lightbox on Mobile --- */
+    .lightbox-content {
+        max-width: 95vw !important;
+        max-height: 85vh !important;
+        border-radius: 0 !important;
+    }
+    .lightbox-close {
+        top: 10px !important;
+        right: 15px !important;
+        font-size: 35px !important;
+    }
+
+    /* --- Home Page Hero Carousel Images --- */
+    .slide img {
+        object-fit: cover !important;
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    /* --- Works Grid on Mobile (2 columns, proper sizing) --- */
+    .grid-item {
+        height: 180px !important;
+    }
+    .grid-item img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+
+    /* --- About Section Image --- */
+    .about-image-content img {
+        width: 100% !important;
+        height: auto !important;
+        object-fit: contain !important;
+    }
+
+    /* --- Footer Mobile --- */
+    .footer-new .contact-wrapper {
+        padding: 0 15px !important;
+    }
+    .contact-image-wrapper {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+    .contact-image-wrapper img {
+        width: 100% !important;
+        height: auto !important;
+        object-fit: cover !important;
+        border-radius: 8px !important;
+    }
+    .contact-email {
+        font-size: 12px !important;
+    }
+    .contact-phone {
+        font-size: 14px !important;
+    }
+
+    /* --- Publications Section --- */
+    .publications-grid {
+        flex-wrap: wrap !important;
+        gap: 20px !important;
+        justify-content: center !important;
+    }
+    .pub-logo {
+        width: 80px !important;
+        height: 50px !important;
+    }
+
+    /* --- Minimal Quote --- */
+    .minimal-quote-text {
+        font-size: 18px !important;
+    }
+
+    /* --- Awards Page --- */
+    .awards-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 15px !important;
+    }
+    .award-card {
+        padding: 15px !important;
+    }
+    .award-title {
+        font-size: 12px !important;
+    }
+    .award-year {
+        font-size: 10px !important;
+    }
+
+    /* --- Contact Page --- */
+    .info-block h3 {
+        font-size: 14px !important;
+    }
+    .info-block p, .info-block a {
+        font-size: 13px !important;
+    }
+
+    /* --- Custom cursor DISABLE on mobile --- */
+    * {
+        cursor: auto !important;
+    }
+    a, a *, button, button *, .grid-item, .grid-item *, input, textarea, select {
+        cursor: pointer !important;
+    }
+}
+
+/* Extra small devices (phones in portrait, less than 400px) */
+@media screen and (max-width: 400px) {
+    .project-title-section .project-title-main {
+        font-size: 10vw !important;
+    }
+    .brief-sidebar {
+        grid-template-columns: 1fr !important;
+    }
+    .slider-card {
+        flex: 0 0 220px !important;
+        height: 260px !important;
+    }
+    .grid {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+    }
+    .grid-item {
+        height: 220px !important;
+    }
+    .awards-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
