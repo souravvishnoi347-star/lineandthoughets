@@ -155,41 +155,12 @@
             .slider-arrow { display: none; } /* Hide arrows on mobile */
         }
 
-        /* Desktop Hero Fix: Full Image, No Scroll Effect */
-        @media screen and (min-width: 769px) {
-            .scroll-track {
-                height: auto !important;
-                padding: 60px 0;
-            }
-            .sticky-image-wrapper {
-                position: relative !important;
-                top: 0 !important;
-                width: 90vw !important;
-                height: auto !important;
-                max-height: 90vh !important;
-                margin: 0 auto;
-                border-radius: 0 !important;
-                box-shadow: none !important;
-                overflow: visible !important;
-            }
-            #dynamic-hero-img {
-                width: 100% !important;
-                height: 100% !important;
-                max-height: 90vh !important;
-                object-fit: contain !important;
-                transform: none !important;
-            }
-            #mist-effect {
-                display: none !important;
-            }
-        }
-
         
-        /* Desktop Hero Fix: Container Aligned Image, No Crop, Title Overlay */
+        /* Desktop Hero Fix: Container Aligned Image, No Crop, Title Overlay v6 */
         @media screen and (min-width: 769px) {
             .scroll-track {
                 height: auto !important;
-                padding: 120px 0 40px 0 !important; /* Space below navbar */
+                padding: 120px 0 40px 0 !important; 
                 margin: 0 auto !important;
                 background-color: #fff;
             }
@@ -197,11 +168,11 @@
                 position: relative !important;
                 top: 0 !important;
                 width: calc(100% - 80px) !important;
-                max-width: 1120px !important; /* Matches .container content width */
+                max-width: 1120px !important; 
                 height: auto !important;
                 max-height: none !important;
                 margin: 0 auto !important;
-                border-radius: 4px !important; /* Subtle rounding so it doesn't look too sharp */
+                border-radius: 4px !important; 
                 box-shadow: 0 10px 30px rgba(0,0,0,0.05) !important;
                 overflow: hidden !important;
                 background-color: transparent !important;
@@ -210,7 +181,7 @@
                 display: block !important;
                 width: 100% !important;
                 height: auto !important;
-                object-fit: contain !important;
+                object-fit: cover !important; /* Forces it to fill the exact width without gap, if aspect ratio is weird */
                 transform: none !important;
             }
             #mist-effect {
@@ -226,7 +197,7 @@
             z-index: 100;
             text-shadow: 0px 4px 20px rgba(0,0,0,0.6);
             pointer-events: none;
-            max-width: calc(100% - 60px); /* Prevents overlapping the right edge */
+            max-width: calc(100% - 60px); 
         }
         .hero-cat {
             display: block;
