@@ -307,7 +307,7 @@ header { position: absolute; top: 0; left: 0; width: 100%; padding: 30px 40px; z
 .view-all-link { font-size: 10px; letter-spacing: 2px; color: #888; text-decoration: none; font-weight: 600; transition: color 0.3s; margin-bottom: 5px; }
 .view-all-link:hover { color: #111; }
 .works-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; width: 100%; }
-.project-card { position: relative; overflow: hidden; aspect-ratio: 16 / 9; cursor: pointer; }
+.project-card { position: relative; overflow: hidden; aspect-ratio: 4 / 3; cursor: pointer; }
 .project-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
 .project-overlay { position: absolute; bottom: 0; left: 0; width: 100%; height: 60%; background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent); display: flex; flex-direction: column; justify-content: flex-end; padding: 20px 25px; opacity: 0; transition: opacity 0.4s ease; }
 .project-category { color: #aaa; font-size: 10px; letter-spacing: 2px; text-transform: lowercase; margin-bottom: 5px; }
