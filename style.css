@@ -608,10 +608,10 @@ textarea.form-control { resize: vertical; min-height: 100px; }
 
     /* --- Signature Works --- */
     #signature-works { padding: 60px 0; }
-    .works-title-row { flex-direction: row; align-items: baseline; justify-content: space-between; gap: 10px; }
-    .works-main-title { flex-wrap: wrap !important; justify-content: center !important; gap: 8px !important; }
-    .works-main-title span { font-size: 26px !important; letter-spacing: 3px !important; text-align: center; line-height: 1.2; }
-    .works-small-title-group { font-size: 12px !important; letter-spacing: 2px; }
+    .works-title-row { flex-direction: row; align-items: flex-end; justify-content: space-between; gap: 10px; }
+    .works-main-title { flex-wrap: nowrap !important; justify-content: flex-start !important; gap: 6px !important; align-items: baseline !important; }
+    .works-main-title span { font-size: 20px !important; letter-spacing: 2px !important; text-align: left; line-height: 1.2; }
+    .works-small-title-group { font-size: 10px !important; letter-spacing: 2px; margin-bottom: 5px; }
     .works-grid { grid-template-columns: 1fr !important; gap: 20px; }
     .project-overlay { opacity: 1 !important; background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent) !important; padding: 15px 20px; }
 
