@@ -1,0 +1,389 @@
+[
+  {
+    "file": "project-aashray.html",
+    "name": "Aashray",
+    "cat": "Residential",
+    "Client": "Mr. Rajnish sharma",
+    "Location": "Jolly Grant , Rishikesh.",
+    "Area": "13,000 Sq.ft",
+    "Role": "Architecture & Interior Design"
+  },
+  {
+    "file": "project-aavaas.html",
+    "name": "Aavaas",
+    "cat": "Residential",
+    "Client": "Mr. Chopra",
+    "Location": "Haridwar , Uttarakhand",
+    "Area": "8500 Sq. ft",
+    "Role": "Turnkey Architecture & Interior Design"
+  },
+  {
+    "file": "project-antarganga.html",
+    "name": "Antarganga",
+    "cat": "Hospitality",
+    "Client": "Mr. Deepanshu Sharma",
+    "Location": "Bhuptwala, Haridwar, Uttarakhand",
+    "Area": "24,000 sq.ft",
+    "Role": "Architecture & Interior Design"
+  },
+  {
+    "file": "project-apartmente-greens.html",
+    "name": "Apartmente' Greens",
+    "cat": "Residential",
+    "Client": "Mani Towers",
+    "Location": "Kankhal, Haridwar, Uttarakhand",
+    "Area": "18,000 sq .ft",
+    "Role": "Architecture & Interior Design"
+  },
+  {
+    "file": "project-aviary.html",
+    "name": "Aviary",
+    "cat": "commercial",
+    "Client": "Mr. Rajnish Sharma",
+    "Location": "Rishikesh, Uttarakhand",
+    "Area": "2300 Sq.ft",
+    "Role": "Interior Designing"
+  },
+  {
+    "file": "project-avyanna.html",
+    "name": "Avyanna",
+    "cat": "Hospitality",
+    "Client": "Avyanna Group",
+    "Location": "Peeli padav ,Haridwar, Uttarakhand",
+    "Area": "1,55,000 Sq.ft",
+    "Role": "Architecture & Interior Design"
+  },
+  {
+    "file": "project-casa-curva-residential.html",
+    "name": "Casa Curva Residential",
+    "cat": "Residential",
+    "Client": "Mr. Anil Baweja",
+    "Location": "Haridwar, Uttarakhand",
+    "Area": "10,000 Sq. Ft.",
+    "Role": "Turnkey Architecture & Interior Design"
+  },
+  {
+    "file": "project-casa-curva.html",
+    "name": "Casa Curva",
+    "cat": "Residential",
+    "Client": "[Add Client]",
+    "Location": "[Add Location]",
+    "Area": "[Add Area]",
+    "Role": "[Add Role]"
+  },
+  {
+    "file": "project-casa-oliva.html",
+    "name": "Casa Oliva",
+    "cat": "Residential",
+    "Client": "Mr. Sharma",
+    "Location": "Kankhal, Haridwar, Uttarakhand",
+    "Area": "2400 Sq.ft",
+    "Role": "Interior Designing"
+  },
+  {
+    "file": "project-casa-prive.html",
+    "name": "Casa Prive",
+    "cat": "Residential",
+    "Client": "Mr. Mudit Garg",
+    "Location": "Haridwar, Uttarakhand",
+    "Area": "4200 Sq.ft",
+    "Role": "Interior Designing"
+  },
+  {
+    "file": "project-casa-terra.html",
+    "name": "Casa Terra",
+    "cat": "Residential",
+    "Client": "Mr. Jai Khurana",
+    "Location": "NRI Antrikash City, Haridwar, Uttarakhand",
+    "Area": "7000 Sq. Ft.",
+    "Role": "Turnkey Architecture & Interior Design"
+  },
+  {
+    "file": "project-chawla-jewelers.html",
+    "name": "Chawla Jewelers",
+    "cat": "Retail",
+    "Client": "Chawla Jewelers",
+    "Location": "Haridwar, Uttarakhand",
+    "Area": "2,400 Sq. Ft.",
+    "Role": "Interior Designing"
+  },
+  {
+    "file": "project-designers-den.html",
+    "name": "The Designers' Den",
+    "cat": "Commercial",
+    "Client": "Lines & Thoughts",
+    "Location": "Haridwar, Uttarakhand",
+    "Area": "3,000 Sq. Ft.",
+    "Role": "Turnkey Architecture & Interior Design"
+  },
+  {
+    "file": "project-ganga-sharnam.html",
+    "name": "Ganga Sharnam",
+    "cat": "Hospitality",
+    "Client": "Mr. Sunil Prajapati",
+    "Location": "Haridwar, Uttarakhand",
+    "Area": "24,000 Sq.ft",
+    "Role": "Architecture & Interior Design"
+  },
+  {
+    "file": "project-ganga-sutra.html",
+    "name": "Ganga Sutra",
+    "cat": "Hospitality",
+    "Client": "Mr. Hitesh Sharma",
+    "Location": "Bhupatwala, Haridwar, Uttarakhand",
+    "Area": "16,500 Sq. Ft.",
+    "Role": "Architecture & Interior Design"
+  },
+  {
+    "file": "project-gauree.html",
+    "name": "Gauree",
+    "cat": "Retail",
+    "Client": "Miss. Gauree",
+    "Location": "Haridwar, Uttarakhand",
+    "Area": "1800 Sq. Ft.",
+    "Role": "Interior Designing"
+  },
+  {
+    "file": "project-gayatri-jewelers.html",
+    "name": "Gayatri Jewelers",
+    "cat": "Retail",
+    "Client": "Mr. Goyal",
+    "Location": "Haridwar, Uttarakhand",
+    "Area": "450 Sq. Ft.",
+    "Role": "Interior Designing"
+  },
+  {
+    "file": "project-goel-sweets.html",
+    "name": "Goel Sweets",
+    "cat": "Retail",
+    "Client": "Goel Sweets",
+    "Location": "Haridwar, Uttarakhand",
+    "Area": "550 Sq. Ft.",
+    "Role": "Interior Designing"
+  },
+  {
+    "file": "project-house-arco.html",
+    "name": "House Arco",
+    "cat": "Residential",
+    "Client": "Mr. Nilesh Jain",
+    "Location": "Kankhal, Haridwar, Uttarakhand",
+    "Area": "6500 Sq.ft",
+    "Role": "Architecture & Interior Design"
+  },
+  {
+    "file": "project-house-of-gems.html",
+    "name": "House of Gems",
+    "cat": "Retail",
+    "Client": "Mr. Sharma",
+    "Location": "Haridwar, Uttarakhand",
+    "Area": "400 Sq ft",
+    "Role": "Interior Designing"
+  },
+  {
+    "file": "project-jewels-lounge.html",
+    "name": "Jewels Lounge",
+    "cat": "Retail",
+    "Client": "Mr. Sunny Malhotra",
+    "Location": "Haridwar, Uttarakhand",
+    "Area": "2,000 Sq. Ft.",
+    "Role": "Architecture & Interior Design"
+  },
+  {
+    "file": "project-jovira.html",
+    "name": "JOVIRA",
+    "cat": "Retail",
+    "Client": "Mrs.Gunjan Nagpal",
+    "Location": "Haridwar, Uttarakhand",
+    "Area": "500 Sq.ft",
+    "Role": "Interior Designing"
+  },
+  {
+    "file": "project-laadli.html",
+    "name": "Laadli",
+    "cat": "Retail",
+    "Client": "Mr. Chauhan",
+    "Location": "Haridwar, Uttarakhand",
+    "Area": "1600 Sq.ft",
+    "Role": "Interior Designing"
+  },
+  {
+    "file": "project-moshams.html",
+    "name": "MoShams",
+    "cat": "Hospitality",
+    "Client": "Accrue Hospitality",
+    "Location": "NarendraNagar Rishikesh, Uttarakhand",
+    "Area": "15,000 Sq. Ft.",
+    "Role": "Turnkey Architecture & Interior Design"
+  },
+  {
+    "file": "project-owl-fitness.html",
+    "name": "OWL Fitness",
+    "cat": "commercial",
+    "Client": "Mr. Akhil Kushwaha",
+    "Location": "Kankhal, Haridwar, Uttarakhand",
+    "Area": "4500 sq.ft",
+    "Role": "Interior Designing"
+  },
+  {
+    "file": "project-ribbon-house.html",
+    "name": "Ribbon House",
+    "cat": "Residential",
+    "Client": "Mr. Vikram Kapoor",
+    "Location": "Kankhal, Haridwar, Uttarakhand",
+    "Area": "6500 Sq.ft",
+    "Role": "Architecture & Interior Design"
+  },
+  {
+    "file": "project-saanjh.html",
+    "name": "Saanjh",
+    "cat": "Hospitality",
+    "Client": "Mr. Hitesh Sharma",
+    "Location": "Bhupatwala, Haridwar, Uttarakhand",
+    "Area": "1300 Sq. Ft.",
+    "Role": "Interior Designing"
+  },
+  {
+    "file": "project-the-arc-house.html",
+    "name": "The Arc House",
+    "cat": "Residential",
+    "Client": "Mr. Amit Sharma",
+    "Location": "Kankhal, Haridwar, Uttarakhand",
+    "Area": "8,000 Sq. Ft.",
+    "Role": "Architecture & Interior Design"
+  },
+  {
+    "file": "project-the-burnt-wall.html",
+    "name": "The Burnt Wall",
+    "cat": "Commercial",
+    "Client": "Mr. Kamal Taneja",
+    "Location": "Haridwar, Uttarakhand",
+    "Area": "1800 Sq. Ft.",
+    "Role": "Interior Designing"
+  },
+  {
+    "file": "project-the-calm-house.html",
+    "name": "The Calm House",
+    "cat": "Residential",
+    "Client": "Miss. Gauree",
+    "Location": "Jurs Country Haridwar, Uttarakhand",
+    "Area": "1600 Sq. Ft.",
+    "Role": "Interior Designing"
+  },
+  {
+    "file": "project-the-crescent.html",
+    "name": "The Crescent",
+    "cat": "Residential",
+    "Client": "Mr. Vishal Sikhola",
+    "Location": "Kankhal, Haridwar, Uttarakhand",
+    "Area": "3750 Sq.ft",
+    "Role": "Architecture & Interior Design"
+  },
+  {
+    "file": "project-the-designers-den.html",
+    "name": "The Designers' Den",
+    "cat": "Commercial",
+    "Client": "Private Investor Group",
+    "Location": "Haridwar, Uttarakhand",
+    "Area": "2,000 Sq. Ft.",
+    "Role": "Architecture & Interior Design"
+  },
+  {
+    "file": "project-the-flowing-canopy.html",
+    "name": "The Flowing Canopy",
+    "cat": "Hospitality",
+    "Client": "Mr. Sanjay Saini",
+    "Location": "Biharigarh, Uttarkhand",
+    "Area": "44,000 Sq. Ft.",
+    "Role": "Architecture & Interior Design"
+  },
+  {
+    "file": "project-the-ganges-royale.html",
+    "name": "The Ganges Royale",
+    "cat": "Residential",
+    "Client": "ETH Infra Group",
+    "Location": "Shyampur kangri Haridwar, Uttarakhand",
+    "Area": "1,15,000 Sq. Ft.",
+    "Role": "Architecture & Interior Design"
+  },
+  {
+    "file": "project-the-laxmi-narayan.html",
+    "name": "The Laxmi Narayan",
+    "cat": "Residential",
+    "Client": "Mr. Ajay Arora",
+    "Location": "Kankhal, Haridwar, Uttarakhand",
+    "Area": "6000 Sq. Ft.",
+    "Role": "Turnkey Architecture & Interior Design"
+  },
+  {
+    "file": "project-the-linear-office.html",
+    "name": "The Linear Office",
+    "cat": "Commercial",
+    "Client": "Swasti Concretes",
+    "Location": "Ibramhimpur , Haridwar, Uttarakhand",
+    "Area": "3000 Sq. Ft.",
+    "Role": "Architecture & Interior Design"
+  },
+  {
+    "file": "project-the-monolith.html",
+    "name": "The Monolith",
+    "cat": "Residential",
+    "Client": "Mr. Khurana",
+    "Location": "Haridwar, Uttarakhand",
+    "Area": "8000 Sq.ft",
+    "Role": "Turnkey Architecture & Interior Design"
+  },
+  {
+    "file": "project-the-mud-villas.html",
+    "name": "The Mud Villas",
+    "cat": "Hospitality",
+    "Client": "Mr. Lalit Nayyar",
+    "Location": "Peeli Padav ,Haridwar, Uttarakhand",
+    "Area": "45,000 Sq. Ft.",
+    "Role": "Architecture & Design"
+  },
+  {
+    "file": "project-the-regalia.html",
+    "name": "The Regalia",
+    "cat": "Residential",
+    "Client": "Mr. Phoolwani",
+    "Location": "Kankhal, Haridwar, Uttarakhand",
+    "Area": "8,000 Sq. Ft.",
+    "Role": "Interior Designing"
+  },
+  {
+    "file": "project-the-sculpted-house.html",
+    "name": "The Sculpted House",
+    "cat": "Residential",
+    "Client": "Mr. Bajaj",
+    "Location": "Saharanpur, Uttar Pradesh",
+    "Area": "7500 Sq. Ft.",
+    "Role": "Architecture & Interior Design"
+  },
+  {
+    "file": "project-the-woven-terrace.html",
+    "name": "The Woven Terrace",
+    "cat": "Hospitality",
+    "Client": "Ramaya INN Hotel",
+    "Location": "Bhupatwala, Haridwar, Uttarakhand",
+    "Area": "2,000 Sq. Ft.",
+    "Role": "Interior Designing"
+  },
+  {
+    "file": "project-the-wrapped-house.html",
+    "name": "The Wrapped House",
+    "cat": "Residential",
+    "Client": "Mr. Atish Gupta",
+    "Location": "Saharanpur, Uttar Pradesh",
+    "Area": "8000 Sq. Ft.",
+    "Role": "Architecture & Interior Design"
+  },
+  {
+    "file": "project-viraasat.html",
+    "name": "Viraasat",
+    "cat": "Residential",
+    "Client": "Mr. Shashank Sikhola",
+    "Location": "Haridwar, Uttarakhand",
+    "Area": "18,000 sq .ft",
+    "Role": "Architecture & Interior Design"
+  }
+]
