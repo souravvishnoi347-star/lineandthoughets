@@ -155,28 +155,29 @@
             .slider-arrow { display: none; } /* Hide arrows on mobile */
         }
 
-        /* Desktop Hero Fix: Full Image, No Scroll Effect */
+        /* Desktop Hero Fix: Full Screen Image, No Title */
         @media screen and (min-width: 769px) {
             .scroll-track {
-                height: auto !important;
-                padding: 60px 0;
+                height: 100vh !important;
+                padding: 0 !important;
+                margin: 0 !important;
             }
             .sticky-image-wrapper {
                 position: relative !important;
                 top: 0 !important;
-                width: 90vw !important;
-                height: auto !important;
-                max-height: 90vh !important;
-                margin: 0 auto;
+                width: 100vw !important;
+                height: 100vh !important;
+                max-height: 100vh !important;
+                margin: 0 !important;
                 border-radius: 0 !important;
                 box-shadow: none !important;
-                overflow: visible !important;
+                overflow: hidden !important;
             }
             #dynamic-hero-img {
-                width: 100% !important;
-                height: 100% !important;
-                max-height: 90vh !important;
-                object-fit: contain !important;
+                width: 100vw !important;
+                height: 100vh !important;
+                max-height: 100vh !important;
+                object-fit: cover !important;
                 transform: none !important;
             }
             #mist-effect {
@@ -249,11 +250,6 @@
             <a href="work.html">Back to Work</a>
         </div>
     </nav>
-
-    <div class="project-title-section">
-        <span class="project-cat">Residential</span>
-        <h1 class="project-title-main">The Ganges Royale</h1>
-    </div>
 
     <div class="scroll-track" id="scroll-track">
         <div class="sticky-image-wrapper" id="sticky-wrapper">
