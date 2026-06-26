@@ -722,12 +722,24 @@ textarea.form-control { resize: vertical; min-height: 100px; }
 }
 
 
-/* --- Flawless Native Pencil Cursor --- */
+/* --- Modern Minimal Cursor --- */
 * {
-    cursor: url('assets/cursor-pencil.png?v=3'), auto !important;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="4" fill="%23111" stroke="%23ffffff" stroke-width="1"/></svg>') 8 8, auto !important;
 }
 a, a *, button, button *, .grid-item, .grid-item *, .pub-item, .pub-item *, .pub-logo, .filter-btn, input, textarea, select {
-    cursor: url('assets/cursor-pencil.png?v=3'), pointer !important;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="rgba(17,17,17,0.1)" stroke="%23111" stroke-width="1"/><circle cx="12" cy="12" r="3" fill="%23111"/></svg>') 12 12, pointer !important;
+}
+
+/* Button Glow Effect */
+.submit-btn {
+    transition: all 0.3s ease;
+}
+.submit-btn:hover {
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    transform: translateY(-2px);
+}
+.filter-btn:hover, .view-all-link:hover {
+    text-shadow: 0 0 8px rgba(0,0,0,0.2);
 }
 
 /* End of style.css */
