@@ -722,12 +722,56 @@ textarea.form-control { resize: vertical; min-height: 100px; }
 }
 
 
-/* --- Modern Minimal Cursor --- */
+/* --- Modern JS Custom Cursor --- */
 * {
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="4" fill="%23111" stroke="%23ffffff" stroke-width="1"/></svg>') 8 8, auto !important;
+    cursor: none !important;
 }
-a, a *, button, button *, .grid-item, .grid-item *, .pub-item, .pub-item *, .pub-logo, .filter-btn, input, textarea, select {
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="rgba(17,17,17,0.1)" stroke="%23111" stroke-width="1"/><circle cx="12" cy="12" r="3" fill="%23111"/></svg>') 12 12, pointer !important;
+
+.custom-cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 6px;
+    background-color: #111;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9999999;
+    transition: width 0.2s, height 0.2s, background-color 0.2s;
+}
+
+.custom-cursor-outline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgba(17, 17, 17, 0.5);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9999998;
+    transition: width 0.2s, height 0.2s, border-color 0.2s;
+}
+
+/* Hover state classes added by JS */
+.custom-cursor-dot.hover {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(17, 17, 17, 0.1);
+    mix-blend-mode: difference;
+}
+
+.custom-cursor-outline.hover {
+    width: 40px;
+    height: 40px;
+    border-color: transparent;
+}
+
+@media screen and (max-width: 768px) {
+    * { cursor: auto !important; }
+    .custom-cursor-dot, .custom-cursor-outline { display: none !important; }
 }
 
 /* Button Glow Effect */
