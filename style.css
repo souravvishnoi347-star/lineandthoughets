@@ -865,11 +865,11 @@ a, a *, button, button *, .grid-item, .grid-item *, .pub-item, .pub-item *, .pub
     top: 0; 
     width: 100vw; 
     height: 100vh; 
-    background-color: rgba(0,0,0,0.92);
+    background-color: rgba(0,0,0,0.4);
     align-items: center;
     justify-content: center;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 .lightbox-modal.active { display: flex; animation: fadeIn 0.3s ease; }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
