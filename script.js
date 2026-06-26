@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 logoContainer.classList.remove('intro-text-black'); 
                                 
                                 setTimeout(() => {
-                                    progressContainer.classList.add('show');
+                                    if(progressContainer) progressContainer.classList.add('show');
                                     mainNav.classList.add('show');
                                     
                                     // Swap the animated logo for the static clickable one
@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         function updateProgressBar() {
             const percentage = ((currentSlide + 1) / slides.length) * 100;
-            progressBar.style.width = percentage + '%';
+            if(progressBar) progressBar.style.width = percentage + '%';
         }
 
         function goToSlide(index) {
