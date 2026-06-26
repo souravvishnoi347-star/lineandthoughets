@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ribbon House - Lines & Thoughts</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=5">
+    
+    <style>
+        /* =========================================
+           PROJECT PAGE SPECIFIC STYLES
+        ========================================= */
+        
+        /* 1. Page Title Header */
+        .project-title-section {
+            text-align: center;
+            padding: 120px 20px 40px; 
+            background: #fff;
+        }
+
+        .project-title-section .project-cat {
+            font-family: 'Montserrat', sans-serif;
+            font-style: normal;
+            color: #777;
+            font-size: 18px;
+            letter-spacing: 2px;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .project-title-section .project-title-main {
+            font-size: 6vw;
+            font-weight: 800;
+            letter-spacing: 4px;
+            color: #111;
+            text-transform: uppercase;
+            margin: 0;
+            line-height: 1.1;
+        }
+
+        /* 2. Interactive Scroll Track */
+        .scroll-track {
+            height: 180vh; 
+            position: relative;
+            background: #fff;
+        }
+
+        .sticky-image-wrapper {
+            position: sticky;
+            top: 10vh; 
+            width: 40vw; 
+            height: 80vh; 
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            will-change: width, height, border-radius, top;
+        }
+
+        #dynamic-hero-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1.15); 
+            transform-origin: center;
+            will-change: transform;
+        }
+
+        #mist-effect {
+            position: absolute;
+            inset: 0;
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px); 
+            opacity: 0; 
+            will-change: opacity;
+            pointer-events: none;
+        }
+
+        /* 3. Content Area */
+        .project-content-layer {
+            position: relative;
+            background-color: #fff;
+            z-index: 5;
+            padding: 80px 0;
+        }
+
+        .project-brief {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 60px;
+            margin-bottom: 100px;
+        }
+
+        .brief-sidebar h4 { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #777; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        .brief-sidebar p { font-size: 14px; margin-bottom: 25px; color: #111; font-weight: 600; }
+        .brief-main p { font-size: 16px; line-height: 2; color: #444; margin-bottom: 30px; }
+
+        /* 4. Horizontal Scroll Gallery */
+        .more-projects-section { padding: 80px 0; background-color: #f9f9f9; }
+        .more-projects-title { text-align: center; font-size: 24px; letter-spacing: 3px; margin-bottom: 50px; text-transform: uppercase; }
+        
+        /* 5. Slider Wrapper & Arrows (NEW CSS) */
+        .slider-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: #111;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .slider-arrow:hover { background: #333; transform: translateY(-50%) scale(1.1); }
+        .left-arrow { left: 20px; }
+        .right-arrow { right: 20px; }
+        
+        .horizontal-slider { display: flex; gap: 30px; overflow-x: auto; padding: 0 40px 40px 40px; scroll-snap-type: x mandatory; scrollbar-width: none; scroll-behavior: smooth; }
+        .horizontal-slider::-webkit-scrollbar { display: none; }
+        .slider-card { flex: 0 0 400px; height: 280px; scroll-snap-align: start; position: relative; overflow: hidden; text-decoration: none; background: #000; }
+        .slider-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease, opacity 0.6s ease; }
+        .slider-card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); opacity: 0; transition: opacity 0.4s ease; }
+        .slider-info { position: absolute; bottom: 25px; left: 25px; z-index: 2; color: #fff; transform: translateY(15px); opacity: 0; transition: all 0.4s ease; }
+        .slider-card:hover img { transform: scale(1.05); opacity: 0.7; }
+        .slider-card:hover::after { opacity: 1; }
+        .slider-card:hover .slider-info { opacity: 1; transform: translateY(0); }
+
+        /* Mobile Adjustments */
+        @media screen and (max-width: 768px) {
+            .project-title-section { padding-top: 100px; }
+            .project-title-section .project-title-main { font-size: 10vw; }
+            .sticky-image-wrapper { width: 85vw; height: 60vh; } 
+            .project-brief { grid-template-columns: 1fr; gap: 40px; }
+            .slider-card { flex: 0 0 280px; height: 350px; }
+            .horizontal-slider { padding: 0 20px 20px 20px; }
+            .slider-card::after, .slider-info { opacity: 1; transform: translateY(0); }
+            .slider-arrow { display: none; } /* Hide arrows on mobile */
+        }
+    </style>
+
+<style>
+/* ===== GALLERY WITH DESKTOP ARROWS ===== */
+.gallery-wrapper {
+    position: relative;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+.gallery-arrow {
+    display: none;
+}
+@media (min-width: 769px) {
+    .gallery-arrow {
+        display: flex;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        width: 48px;
+        height: 48px;
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 18px;
+        color: #111;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .gallery-arrow:hover {
+        background: #111;
+        color: #fff;
+        border-color: #111;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+    .gallery-arrow.left { left: -24px; }
+    .gallery-arrow.right { right: -24px; }
+}
+</style>
+
+    <link rel="icon" type="image/jpeg" href="assets/favicon.jpg">
+</head>
+<body style="background-color: #ffffff;">
+
+    <nav class="static-nav">
+        <a href="index.html" class="nav-logo-wrapper">
+            <img src="assets/icon.png" class="nav-logo-img" alt="Logo">
+            <div class="nav-logo-text-group">
+    <div class="nav-logo-main"><span>LINES</span> & THOUGHTS</div>
+    <div class="nav-logo-sub">BY KARTIK | AKSHAY</div> 
+</div>
+        </a>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <div class="nav-links">
+            <a href="work.html">Back to Work</a>
+        </div>
+    </nav>
+
+    <div class="project-title-section">
+        <span class="project-cat">Hospitality</span>
+        <h1 class="project-title-main">Avyanna</h1>
+    </div>
+
+    <div class="scroll-track" id="scroll-track">
+        <div class="sticky-image-wrapper" id="sticky-wrapper">
+            <img src="optimized-assets/Avyanna, Hospitality/01.png" id="dynamic-hero-img" alt="Avyanna">
+            <div id="mist-effect" style="opacity: 0; pointer-events: none;"></div>
+        </div>
+    </div>
+
+    <main class="project-content-layer">
+        <section class="container project-brief">
+            <div class="brief-sidebar">
+                <h4>Client</h4>
+                <p>[Add Client]</p>
+                
+                <h4>Location</h4>
+                <p>[Add Location]</p>
+                
+                <h4>Area</h4>
+                <p>[Add Area]</p>
+
+                <h4>Role</h4>
+                <p>[Add Role]</p>
+            </div>
+            
+            <div class="brief-main">
+                <h2 style="font-size: 28px; margin-bottom: 20px; font-weight: 800;">[Add Title]</h2>
+                <p>[Add Paragraph 1]</p>
+                <p>[Add Paragraph 2]</p>
+                
+                <div class="gallery-wrapper">
+                    <button class="gallery-arrow left" aria-label="Previous">&#8592;</button>
+                    <div class="project-gallery-carousel">
+                    <img src="optimized-assets/Ribbon House , Residential/Kapoor's House Elevation  (10).png" alt="Ribbon House Image">
+                    <img src="optimized-assets/Ribbon House , Residential/Kapoor's House Elevation  (12).png" alt="Ribbon House Image">
+                    <img src="optimized-assets/Ribbon House , Residential/Kapoor's House Elevation  (13).png" alt="Ribbon House Image">
+                    <img src="optimized-assets/Ribbon House , Residential/Kapoor's House Elevation  (5).png" alt="Ribbon House Image">
+                    <img src="optimized-assets/Ribbon House , Residential/Kapoor's House Elevation  (8).png" alt="Ribbon House Image">
+                    <img src="optimized-assets/Ribbon House , Residential/Living + Lobby  (10).png" alt="Ribbon House Image">
+                    <img src="optimized-assets/Ribbon House , Residential/Living + Lobby  (16).png" alt="Ribbon House Image">
+                    <img src="optimized-assets/Ribbon House , Residential/Living + Lobby  (19).png" alt="Ribbon House Image">
+                    <img src="optimized-assets/Ribbon House , Residential/Living + Lobby  (2).png" alt="Ribbon House Image">
+                    <img src="optimized-assets/Ribbon House , Residential/Living + Lobby  (3).png" alt="Ribbon House Image">
+                    <img src="optimized-assets/Ribbon House , Residential/Living + Lobby  (6).png" alt="Ribbon House Image">
+                    <img src="optimized-assets/Ribbon House , Residential/Master Bedroom (1).png" alt="Ribbon House Image">
+                    </div>
+                    <button class="gallery-arrow right" aria-label="Next">&#8594;</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="more-projects-section">
+            <h3 class="more-projects-title">EXPLORE <span style="font-family: 'Montserrat', sans-serif; font-style: normal; color: #777; text-transform: lowercase;">more works</span></h3>
+            
+            <div class="slider-wrapper">
+                <button class="slider-arrow left-arrow" id="left-arrow">&#10094;</button>
+                
+                <div class="horizontal-slider" id="project-slider">
+                    <a href="/project-moshams" class="slider-card">
+                        <img src="optimized-assets/MoShams, Hospitality/01.jpg" alt="Moshams">
+                        <div class="slider-info">
+                            <span style="font-size: 10px; letter-spacing: 2px; color: #ddd; text-transform: uppercase;">Hospitality</span>
+                            <h4 style="font-size: 18px; margin-top: 5px; text-transform: uppercase;">Moshams</h4>
+                        </div>
+                    </a>
+                    <a href="/project-the-flowing-canopy" class="slider-card">
+                        <img src="optimized-assets/The Flowing Canopy, Hospitality/You, Now Lines & Thoughts © Harsh Nigam _0001.jpg" alt="The Flowing Canopy">
+                        <div class="slider-info">
+                            <span style="font-size: 10px; letter-spacing: 2px; color: #ddd; text-transform: uppercase;">Hospitality</span>
+                            <h4 style="font-size: 18px; margin-top: 5px; text-transform: uppercase;">The Flowing Canopy</h4>
+                        </div>
+                    </a>
+                    <a href="/project-the-mud-villas" class="slider-card">
+                        <img src="optimized-assets/The Mud Villas, Hospitality/01.jpg" alt="The Mud Villas">
+                        <div class="slider-info">
+                            <span style="font-size: 10px; letter-spacing: 2px; color: #ddd; text-transform: uppercase;">Hospitality</span>
+                            <h4 style="font-size: 18px; margin-top: 5px; text-transform: uppercase;">The Mud Villas</h4>
+                        </div>
+                    </a>
+                </div>
+                <button class="slider-arrow right-arrow" id="right-arrow">&#10095;</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-new" style="margin-top: 0; padding-top: 40px; padding-bottom: 40px;">
+        <div class="container">
+            <div class="copyright-bar" style="margin-top: 0; border-top: none;">
+                <p>built by . <a href="#">hostbolt</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // 1. Mobile Menu Logic
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.querySelector('.nav-links');
+            if(mobileMenu) {
+                mobileMenu.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('is-active');
+                    navLinks.classList.toggle('active');
+                });
+            }
+
+            // 2. The Portrait to Landscape Scroll Animation
+            const track = document.getElementById('scroll-track');
+            const wrapper = document.getElementById('sticky-wrapper');
+            const img = document.getElementById('dynamic-hero-img');
+            const mist = document.getElementById('mist-effect');
+
+            window.addEventListener('scroll', () => {
+                let scrollY = window.scrollY;
+                let trackTop = track.offsetTop;
+                
+                let isMobile = window.innerWidth <= 768;
+                let startWidth = isMobile ? 85 : 40; 
+                let startHeight = isMobile ? 60 : 80; 
+
+                if(scrollY >= trackTop - 150) {
+                   let scrolledPixels = scrollY - (trackTop - 150);
+                   let maxScrollDistance = 500; 
+                   let progress = Math.min(scrolledPixels / maxScrollDistance, 1);
+                   progress = Math.max(progress, 0); 
+
+                   let currentWidth = startWidth + ((100 - startWidth) * progress);
+                   wrapper.style.width = `${currentWidth}vw`;
+                   
+                   let currentHeight = startHeight + ((100 - startHeight) * progress);
+                   wrapper.style.height = `${currentHeight}vh`;
+
+                   let currentTop = 10 - (10 * progress);
+                   wrapper.style.top = `${currentTop}vh`;
+
+                   let currentRadius = 15 - (15 * progress);
+                   wrapper.style.borderRadius = `${currentRadius}px`;
+                   
+                   img.style.transform = `scale(${1.15 - (0.15 * progress)})`;
+
+                   mist.style.opacity = 0; 
+                
+                } else {
+                   wrapper.style.width = `${startWidth}vw`;
+                   wrapper.style.height = `${startHeight}vh`;
+                   wrapper.style.borderRadius = '15px';
+                   wrapper.style.top = '10vh';
+                   img.style.transform = 'scale(1.15)';
+                   mist.style.opacity = 0;
+                }
+            });
+
+            // 3. Continuous Slider Auto-Run & Arrow Clicks (NEW JS)
+            const slider = document.getElementById('project-slider');
+            const leftArrow = document.getElementById('left-arrow');
+            const rightArrow = document.getElementById('right-arrow');
+            
+            if(slider && leftArrow && rightArrow) {
+                const scrollAmount = 430; 
+                
+                leftArrow.addEventListener('click', () => {
+                    slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                });
+                
+                rightArrow.addEventListener('click', () => {
+                    slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                });
+
+                let autoScrollTimer;
+                const startAutoScroll = () => {
+                    autoScrollTimer = setInterval(() => {
+                        if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 5) {
+                            slider.scrollTo({ left: 0, behavior: 'smooth' });
+                        } else {
+                            slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                        }
+                    }, 3500); 
+                };
+
+                const stopAutoScroll = () => clearInterval(autoScrollTimer);
+
+                startAutoScroll();
+
+                slider.addEventListener('mouseenter', stopAutoScroll);
+                slider.addEventListener('mouseleave', startAutoScroll);
+                slider.addEventListener('touchstart', stopAutoScroll, {passive: true});
+                slider.addEventListener('touchend', startAutoScroll);
+            }
+        });
+    </script>
+
+
+<script>
+// Gallery Arrow Logic
+document.querySelectorAll('.gallery-wrapper').forEach(function(wrapper) {
+    var carousel = wrapper.querySelector('.project-gallery-carousel');
+    var leftBtn = wrapper.querySelector('.gallery-arrow.left');
+    var rightBtn = wrapper.querySelector('.gallery-arrow.right');
+    if (!carousel || !leftBtn || !rightBtn) return;
+    var scrollAmt = 500;
+    leftBtn.addEventListener('click', function() {
+        carousel.scrollBy({ left: -scrollAmt, behavior: 'smooth' });
+    });
+    rightBtn.addEventListener('click', function() {
+        carousel.scrollBy({ left: scrollAmt, behavior: 'smooth' });
+    });
+});
+</script>
+</body>
+</html>
+
+

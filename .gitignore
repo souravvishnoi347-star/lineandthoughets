@@ -4,3 +4,4 @@ node_modules/
 picker.html
 package.json
 package-lock.json
+*.mp4
