@@ -909,16 +909,16 @@ a, a *, button, button *, .grid-item, .grid-item *, .pub-item, .pub-item *, .pub
 
     /* --- Project Page Hero Image --- */
     .scroll-track {
-        height: 120vh !important;
+        height: 160vh;
     }
     .sticky-image-wrapper {
-        width: 90vw !important;
-        height: 55vh !important;
-        top: 8vh !important;
-        border-radius: 10px !important;
+        width: 85vw;
+        height: 60vh;
+        top: 10vh;
+        border-radius: 15px;
     }
     #dynamic-hero-img {
-        transform: scale(1.05) !important;
+        transform: scale(1.15);
     }
 
     /* --- Project Title --- */
