@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Data Editor</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Arial', sans-serif; background: #f5f5f5; color: #111; }
+        header { background: #111; color: #fff; padding: 20px 40px; position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; }
+        header h1 { font-size: 18px; letter-spacing: 2px; }
+        #save-btn { background: #c8a96e; color: #fff; border: none; padding: 10px 24px; font-size: 14px; letter-spacing: 1px; cursor: pointer; border-radius: 4px; font-weight: bold; }
+        #save-btn:hover { background: #b8944e; }
+        #status { font-size: 12px; color: #c8a96e; margin-top: 4px; }
+
+        .editor-container { background: #fff; margin: 20px 40px; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); max-width: 900px; margin-left: auto; margin-right: auto; }
+        
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-size: 12px; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; color: #555; margin-bottom: 8px; }
+        .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-family: inherit; font-size: 14px; }
+        .form-group textarea { resize: vertical; min-height: 100px; }
+        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: #c8a96e; }
+        
+        .flex-row { display: flex; gap: 20px; }
+        .flex-row .form-group { flex: 1; }
+    </style>
+</head>
+<body>
+
+<header>
+    <div>
+        <h1>📝 PROJECT DATA EDITOR</h1>
+        <div id="status">Select a project to edit its details</div>
+    </div>
+    <div style="display: flex; gap: 10px; align-items: center;">
+        <select id="project-selector" style="padding: 10px; border-radius: 4px; font-size: 14px;" onchange="loadProject()">
+            <option value="" disabled selected>Loading projects...</option>
+        </select>
+        <button id="save-btn" onclick="saveProject()">💾 Save to HTML File</button>
+    </div>
+</header>
+
+<div class="editor-container" id="editor" style="display: none;">
+    <div class="flex-row">
+        <div class="form-group">
+            <label>Client</label>
+            <input type="text" id="client" placeholder="e.g. Private Investor Group">
+        </div>
+        <div class="form-group">
+            <label>Location</label>
+            <input type="text" id="location" placeholder="e.g. Haridwar, Uttarakhand">
+        </div>
+    </div>
+    <div class="flex-row">
+        <div class="form-group">
+            <label>Area</label>
+            <input type="text" id="area" placeholder="e.g. 2,000 Sq. Ft.">
+        </div>
+        <div class="form-group">
+            <label>Role</label>
+            <input type="text" id="role" placeholder="e.g. Architecture & Interior Design">
+        </div>
+    </div>
+
+    <hr style="margin: 30px 0; border: none; border-top: 1px solid #eee;">
+
+    <div class="form-group">
+        <label>Heading Title</label>
+        <input type="text" id="title" placeholder="e.g. A Canvas for Creativity">
+    </div>
+
+    <div class="form-group">
+        <label>Paragraph 1</label>
+        <textarea id="p1" placeholder="First paragraph..."></textarea>
+    </div>
+
+    <div class="form-group">
+        <label>Paragraph 2</label>
+        <textarea id="p2" placeholder="Second paragraph..."></textarea>
+    </div>
+</div>
+
+<div id="loading" style="padding: 40px; text-align: center; color: #777;">Loading...</div>
+
+<script>
+let currentFile = '';
+
+async function init() {
+    try {
+        const res = await fetch('/list-projects');
+        const files = await res.json();
+        
+        const select = document.getElementById('project-selector');
+        select.innerHTML = '<option value="" disabled selected>Select a Project...</option>';
+        
+        files.forEach(f => {
+            const option = document.createElement('option');
+            option.value = f;
+            option.textContent = f.replace('project-', '').replace('.html', '').toUpperCase();
+            select.appendChild(option);
+        });
+        
+        document.getElementById('loading').style.display = 'none';
+    } catch(e) {
+        document.getElementById('loading').textContent = 'Error loading projects. Is the server running?';
+    }
+}
+
+async function loadProject() {
+    const select = document.getElementById('project-selector');
+    currentFile = select.value;
+    if (!currentFile) return;
+    
+    document.getElementById('loading').style.display = 'block';
+    document.getElementById('loading').textContent = 'Loading data...';
+    document.getElementById('editor').style.display = 'none';
+    document.getElementById('status').textContent = 'Editing: ' + currentFile;
+    
+    try {
+        const res = await fetch('/get-project-data?file=' + encodeURIComponent(currentFile));
+        const data = await res.json();
+        
+        document.getElementById('client').value = data.client || '';
+        document.getElementById('location').value = data.location || '';
+        document.getElementById('area').value = data.area || '';
+        document.getElementById('role').value = data.role || '';
+        document.getElementById('title').value = data.title || '';
+        document.getElementById('p1').value = data.p1 || '';
+        document.getElementById('p2').value = data.p2 || '';
+        
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById('editor').style.display = 'block';
+    } catch(e) {
+        document.getElementById('loading').textContent = 'Error loading data.';
+    }
+}
+
+async function saveProject() {
+    if (!currentFile) {
+        alert("Please select a project first.");
+        return;
+    }
+    
+    document.getElementById('status').textContent = 'Saving...';
+    
+    const payload = {
+        file: currentFile,
+        client: document.getElementById('client').value,
+        location: document.getElementById('location').value,
+        area: document.getElementById('area').value,
+        role: document.getElementById('role').value,
+        title: document.getElementById('title').value,
+        p1: document.getElementById('p1').value,
+        p2: document.getElementById('p2').value
+    };
+    
+    try {
+        const res = await fetch('/save-project-data', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        });
+        const result = await res.text();
+        document.getElementById('status').textContent = '✅ ' + result;
+        alert("Successfully saved! You can check " + currentFile + " to see the changes.");
+    } catch(e) {
+        document.getElementById('status').textContent = '❌ Error: ' + e.message;
+        alert("Error saving: " + e.message);
+    }
+}
+
+init();
+</script>
+</body>
+</html>
