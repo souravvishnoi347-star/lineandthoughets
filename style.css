@@ -715,9 +715,10 @@ textarea.form-control { resize: vertical; min-height: 100px; }
 .project-gallery-carousel img {
     height: 75vh !important;
     max-height: 750px !important;
-    width: 85% !important;
+    width: auto !important;
+    max-width: 90vw !important;
     flex: 0 0 auto !important;
-    object-fit: cover !important;
+    object-fit: contain !important;
 }
 
 
