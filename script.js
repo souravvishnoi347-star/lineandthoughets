@@ -196,7 +196,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const worksObserver = new IntersectionObserver((entries) => {
             if (entries[0].isIntersecting && !worksAnimated) {
                 worksAnimated = true;
-                worksLine.classList.add('expand');
+                if(worksLine) worksLine.classList.add('expand');
                setTimeout(() => {
                     if (typeCraftedEl && typeSpacesEl) {
                         typeWriter(typeCraftedEl, "CRAFTED ", 40, () => {
@@ -207,6 +207,34 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }, { threshold: 0.1 }); 
         if(worksSection) worksObserver.observe(worksSection);
+
+        // Minds Behind Line Animation
+        const mindsContainer = document.querySelector('.minds-behind-container');
+        const mindsLine = document.getElementById('minds-line');
+        if (mindsContainer && mindsLine) {
+            let mindsAnimated = false;
+            const mindsObserver = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting && !mindsAnimated) {
+                    mindsAnimated = true;
+                    mindsLine.classList.add('expand');
+                }
+            }, { threshold: 0.1 });
+            mindsObserver.observe(mindsContainer);
+        }
+
+        // Featured In Line Animation
+        const featuredContainer = document.querySelector('.publications-section');
+        const featuredLine = document.getElementById('featured-line');
+        if (featuredContainer && featuredLine) {
+            let featuredAnimated = false;
+            const featuredObserver = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting && !featuredAnimated) {
+                    featuredAnimated = true;
+                    featuredLine.classList.add('expand');
+                }
+            }, { threshold: 0.1 });
+            featuredObserver.observe(featuredContainer);
+        }
     } 
 
     // ========================================
