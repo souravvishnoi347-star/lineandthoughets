@@ -1153,8 +1153,8 @@ a, a *, button, button *, .grid-item, .grid-item *, .pub-item, .pub-item *, .pub
         height: 260px !important;
     }
     .grid {
-        grid-template-columns: 1fr !important;
-        gap: 15px !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
     }
     .grid-item {
         height: 220px !important;
