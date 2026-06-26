@@ -155,12 +155,42 @@
             .slider-arrow { display: none; } /* Hide arrows on mobile */
         }
 
-        /* Desktop Hero Fix: Full Screen Image, No Title */
+        /* Desktop Hero Fix: Full Image, No Scroll Effect */
+        @media screen and (min-width: 769px) {
+            .scroll-track {
+                height: auto !important;
+                padding: 60px 0;
+            }
+            .sticky-image-wrapper {
+                position: relative !important;
+                top: 0 !important;
+                width: 90vw !important;
+                height: auto !important;
+                max-height: 90vh !important;
+                margin: 0 auto;
+                border-radius: 0 !important;
+                box-shadow: none !important;
+                overflow: visible !important;
+            }
+            #dynamic-hero-img {
+                width: 100% !important;
+                height: 100% !important;
+                max-height: 90vh !important;
+                object-fit: contain !important;
+                transform: none !important;
+            }
+            #mist-effect {
+                display: none !important;
+            }
+        }
+
+        /* Desktop Hero Fix: Full Screen Image, Contain (no cut), Title Overlay */
         @media screen and (min-width: 769px) {
             .scroll-track {
                 height: 100vh !important;
                 padding: 0 !important;
                 margin: 0 !important;
+                background-color: #111;
             }
             .sticky-image-wrapper {
                 position: relative !important;
@@ -172,17 +202,52 @@
                 border-radius: 0 !important;
                 box-shadow: none !important;
                 overflow: hidden !important;
+                background-color: transparent !important;
             }
             #dynamic-hero-img {
                 width: 100vw !important;
                 height: 100vh !important;
                 max-height: 100vh !important;
-                object-fit: cover !important;
+                object-fit: contain !important;
                 transform: none !important;
             }
             #mist-effect {
                 display: none !important;
             }
+        }
+        
+        .hero-title-overlay {
+            position: absolute;
+            bottom: 40px;
+            left: 40px;
+            color: #fff;
+            z-index: 100;
+            text-shadow: 0px 4px 20px rgba(0,0,0,0.6);
+            pointer-events: none;
+        }
+        .hero-cat {
+            display: block;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+        .hero-title-main {
+            font-size: 4vw;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+        @media (max-width: 768px) {
+            .hero-title-overlay {
+                bottom: 20px;
+                left: 20px;
+            }
+            .hero-title-main { font-size: 8vw; }
         }
     </style>
 
@@ -254,6 +319,11 @@
     <div class="scroll-track" id="scroll-track">
         <div class="sticky-image-wrapper" id="sticky-wrapper">
             <img src="optimized-assets/Gayatri Jewelers/Gayatri Jewelleres Option 2 (1).png" id="dynamic-hero-img" alt="Gayatri Jewelers">
+
+            <div class="hero-title-overlay">
+                <span class="hero-cat">Retail</span>
+                <h1 class="hero-title-main">Gayatri Jewelers</h1>
+            </div>
             <div id="mist-effect" style="opacity: 0; pointer-events: none;"></div>
         </div>
     </div>
@@ -294,7 +364,7 @@
         </section>
 
         <section class="more-projects-section">
-            <h3 class="more-projects-title">EXPLORE <span style="font-family: 'Montserrat', sans-serif; font-style: normal; color: #777; text-transform: lowercase;">more works</span></h3>
+            <h3 class="more-projects-title">EXPLORE <span style="font-family: 'Montserrat', sans-serif; font-style: normal; color: #777; text-transform: lowercase;">more works / Retail</span></h3>
             
             <div class="slider-wrapper">
                 <button class="slider-arrow left-arrow" id="left-arrow">❮</button>
