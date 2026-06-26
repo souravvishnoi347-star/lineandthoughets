@@ -154,7 +154,37 @@
             .slider-card::after, .slider-info { opacity: 1; transform: translateY(0); }
             .slider-arrow { display: none; } /* Hide arrows on mobile */
         }
+
+        /* Desktop Hero Fix: Full Image, No Scroll Effect */
+        @media screen and (min-width: 769px) {
+            .scroll-track {
+                height: auto !important;
+                padding: 60px 0;
+            }
+            .sticky-image-wrapper {
+                position: relative !important;
+                top: 0 !important;
+                width: 90vw !important;
+                height: auto !important;
+                max-height: 90vh !important;
+                margin: 0 auto;
+                border-radius: 0 !important;
+                box-shadow: none !important;
+                overflow: visible !important;
+            }
+            #dynamic-hero-img {
+                width: 100% !important;
+                height: 100% !important;
+                max-height: 90vh !important;
+                object-fit: contain !important;
+                transform: none !important;
+            }
+            #mist-effect {
+                display: none !important;
+            }
+        }
     </style>
+
 
 <style>
 /* ===== GALLERY WITH DESKTOP ARROWS ===== */
@@ -448,6 +478,7 @@
                 let trackTop = track.offsetTop;
                 
                 let isMobile = window.innerWidth <= 768;
+                if (!isMobile) return; // Disable scroll effect on desktop
                 let startWidth = isMobile ? 85 : 40; 
                 let startHeight = isMobile ? 60 : 80; 
 
