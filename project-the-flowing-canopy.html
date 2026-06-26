@@ -435,6 +435,70 @@ document.querySelectorAll('.gallery-wrapper').forEach(function(wrapper) {
     });
 });
 </script>
+
+<!-- LIGHTBOX FEATURE -->
+<div id="gallery-lightbox" class="lightbox-modal">
+    <span class="lightbox-close">&times;</span>
+    <span class="lightbox-prev">&#10094;</span>
+    <img class="lightbox-content" id="lightbox-img">
+    <span class="lightbox-next">&#10095;</span>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const lightbox = document.getElementById('gallery-lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.querySelector('.lightbox-close');
+    const prevBtn = document.querySelector('.lightbox-prev');
+    const nextBtn = document.querySelector('.lightbox-next');
+    
+    // Select only the images inside the main gallery carousel
+    const galleryImages = Array.from(document.querySelectorAll('.project-gallery-carousel img'));
+    let currentIndex = 0;
+
+    if (galleryImages.length === 0) return;
+
+    galleryImages.forEach((img, index) => {
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', function() {
+            currentIndex = index;
+            showLightbox(currentIndex);
+        });
+    });
+
+    function showLightbox(index) {
+        if (index < 0) index = galleryImages.length - 1;
+        if (index >= galleryImages.length) index = 0;
+        currentIndex = index;
+        lightboxImg.src = galleryImages[currentIndex].src;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden'; 
+    }
+
+    closeBtn.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', function(e) {
+        if (e.target !== lightboxImg && e.target !== prevBtn && e.target !== nextBtn) {
+            closeLightbox();
+        }
+    });
+
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+
+    prevBtn.addEventListener('click', () => showLightbox(currentIndex - 1));
+    nextBtn.addEventListener('click', () => showLightbox(currentIndex + 1));
+
+    document.addEventListener('keydown', function(e) {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') showLightbox(currentIndex - 1);
+        if (e.key === 'ArrowRight') showLightbox(currentIndex + 1);
+    });
+});
+</script>
+
 </body>
 </html>
 
