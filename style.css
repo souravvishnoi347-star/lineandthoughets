@@ -722,12 +722,12 @@ textarea.form-control { resize: vertical; min-height: 100px; }
 }
 
 
-/* --- Custom Star Cursor --- */
+/* --- Custom Minimalist Dot Cursor --- */
 * {
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="%23111" stroke="%23ffffff" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>') 11 11, auto !important;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="3" fill="%23111" stroke="%23ffffff" stroke-width="1"/></svg>') 8 8, auto !important;
 }
 a, a *, button, button *, .grid-item, .grid-item *, .pub-item, .pub-item *, .pub-logo, .filter-btn, input, textarea, select {
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="%23111" stroke="%23ffffff" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>') 12 12, pointer !important;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="5" fill="transparent" stroke="%23111" stroke-width="1.5"/><circle cx="10" cy="10" r="2" fill="%23111"/></svg>') 10 10, pointer !important;
 }
 
 /* Button Glow Effect */
