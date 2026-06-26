@@ -124,8 +124,10 @@ header { position: absolute; top: 0; left: 0; width: 100%; padding: 30px 40px; z
 #main-nav.show { opacity: 1 !important; }
 
 .nav-links { display: flex; gap: 30px; list-style: none; z-index: 1000; }
-#main-nav .nav-links a { color: #fff; text-decoration: none; text-transform: uppercase; font-size: 11px; letter-spacing: 2px; font-weight: 500; transition: opacity 0.3s; }
-#main-nav .nav-links a:hover { opacity: 0.7; }
+#main-nav .nav-links a { position: relative; color: #fff; text-decoration: none; text-transform: uppercase; font-size: 11px; letter-spacing: 2px; font-weight: 500; transition: opacity 0.3s; }
+#main-nav .nav-links a::after { content: ''; position: absolute; width: 0; height: 1.5px; bottom: -4px; left: 0; background-color: #fff; transition: width 0.3s ease; }
+#main-nav .nav-links a:hover { opacity: 1; }
+#main-nav .nav-links a:hover::after { width: 100%; }
 
 .progress-container { position: absolute; bottom: 15px; left: 5%; width: 90%; height: 3px; background: rgba(255, 255, 255, 0.2); z-index: 50; opacity: 0; transition: opacity 1s ease-in; }
 .progress-container.show { opacity: 1; }
@@ -327,9 +329,11 @@ header { position: absolute; top: 0; left: 0; width: 100%; padding: 30px 40px; z
 .static-nav .nav-logo-main span { font-weight: 300; }
 .static-nav .nav-logo-sub { font-size: 7px; letter-spacing: 3px; text-transform: uppercase; margin-top: 2px; opacity: 0.8; color: #111;}
 
-.static-nav .nav-links a { color: #111; text-decoration: none; text-transform: uppercase; font-size: 12px; letter-spacing: 2px; font-weight: 400; transition: opacity 0.3s; }
-.static-nav .nav-links a:hover { opacity: 0.6; }
-.static-nav .nav-links a.active { border-bottom: 1.5px solid #111; padding-bottom: 4px; }
+.static-nav .nav-links a { position: relative; color: #111; text-decoration: none; text-transform: uppercase; font-size: 12px; letter-spacing: 2px; font-weight: 400; transition: opacity 0.3s; }
+.static-nav .nav-links a::after { content: ''; position: absolute; width: 0; height: 1.5px; bottom: -4px; left: 0; background-color: #111; transition: width 0.3s ease; }
+.static-nav .nav-links a:hover::after { width: 100%; }
+.static-nav .nav-links a.active::after { width: 100%; }
+.static-nav .nav-links a.active { border-bottom: none; padding-bottom: 0; }
 
 /* Desktop Menu Toggles Hidden */
 .hamburger, .menu-toggle { display: none; cursor: pointer; }
