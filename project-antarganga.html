@@ -184,30 +184,32 @@
             }
         }
 
-        /* Desktop Hero Fix: Full Screen Image, Contain (no cut), Title Overlay */
+        
+        /* Desktop Hero Fix: Container Aligned Image, No Crop, Title Overlay */
         @media screen and (min-width: 769px) {
             .scroll-track {
-                height: 100vh !important;
-                padding: 0 !important;
-                margin: 0 !important;
-                background-color: #111;
+                height: auto !important;
+                padding: 120px 0 40px 0 !important; /* Space below navbar */
+                margin: 0 auto !important;
+                background-color: #fff;
             }
             .sticky-image-wrapper {
                 position: relative !important;
                 top: 0 !important;
-                width: 100vw !important;
-                height: 100vh !important;
-                max-height: 100vh !important;
-                margin: 0 !important;
-                border-radius: 0 !important;
-                box-shadow: none !important;
+                width: calc(100% - 80px) !important;
+                max-width: 1120px !important; /* Matches .container content width */
+                height: auto !important;
+                max-height: none !important;
+                margin: 0 auto !important;
+                border-radius: 4px !important; /* Subtle rounding so it doesn't look too sharp */
+                box-shadow: 0 10px 30px rgba(0,0,0,0.05) !important;
                 overflow: hidden !important;
                 background-color: transparent !important;
             }
             #dynamic-hero-img {
-                width: 100vw !important;
-                height: 100vh !important;
-                max-height: 100vh !important;
+                display: block !important;
+                width: 100% !important;
+                height: auto !important;
                 object-fit: contain !important;
                 transform: none !important;
             }
@@ -218,12 +220,13 @@
         
         .hero-title-overlay {
             position: absolute;
-            bottom: 40px;
-            left: 40px;
+            bottom: 30px;
+            left: 30px;
             color: #fff;
             z-index: 100;
             text-shadow: 0px 4px 20px rgba(0,0,0,0.6);
             pointer-events: none;
+            max-width: calc(100% - 60px); /* Prevents overlapping the right edge */
         }
         .hero-cat {
             display: block;
@@ -240,14 +243,17 @@
             text-transform: uppercase;
             letter-spacing: 3px;
             font-weight: 700;
-            line-height: 1.1;
+            line-height: 1.2;
+            white-space: normal;
+            word-wrap: break-word;
         }
         @media (max-width: 768px) {
             .hero-title-overlay {
                 bottom: 20px;
                 left: 20px;
+                max-width: calc(100% - 40px);
             }
-            .hero-title-main { font-size: 8vw; }
+            .hero-title-main { font-size: 8vw; line-height: 1.1; }
         }
     </style>
 
